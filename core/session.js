@@ -48,7 +48,7 @@ class BuildSession {
 
   sendText (text, opts){
     opts = opts ||'§b';
-    this.session.sendCommand(['say',opts,'§\"',text,'§\"'].join(' '));
+    this.session.sendCommand(['say',opts+'§\"'+text+'§\"'].join(' '));
     console.log('SendText: ' + text);
   }
 
@@ -67,7 +67,11 @@ class BuildSession {
       }
       return true;
     }else if(args.showhelp){
-        this.sendText(helps[args.showhelp]);
+	if(args.error){
+		this.sendText(helps[args.showhelp],"§4");
+	}else{
+        	this.sendText(helps[args.showhelp]);
+	}
         return true;
     }else{
       return false;
@@ -105,8 +109,8 @@ class BuildSession {
         return;
       }
 
-      else if((map.length * delays) / 1000 >= 120 && !root){
-        sendText(now() + 'Permission denied: Time takes more than 2 minutes.Are you root?');
+      else if((map.length * delays) / 1000 >= 240 && !root){
+        this.sendText(now() + 'Permission denied: Time takes more than 4 minutes.Are you root?');
         return;
       }
 
@@ -141,8 +145,9 @@ class BuildSession {
             break;
 
           default:
-            console.log(now() + 'Unknown error!!Exiting...');
-            process.exit();
+		throw new Error("Unknown");
+            //console.log(now() + 'Unknown error!!Exiting...');
+            //process.exit();
             break;
         }
     }
@@ -170,21 +175,26 @@ class BuildSession {
     let that = this;
     if(type == 'pos' || type == 'position'){
       this.session.sendCommand(['testforblock','~','~','~','air'].join(' '));
-       let $b = setTimeout(() =>{
+       let $b = setInterval(() =>{
          $default.position = this.session.getHistory('position','last');
+		if($default.position==undefined)return;
          that.sendText(now() + 'Position get: ' + $default.position.join(' '));
-       },500);
+		clearInterval($b);
+       },50);
     }else if(type == 'player' || type == 'players'){
       this.session.sendCommand('listd');
-      let $c = setTimeout(() => {
-        let $arr = toArray(that.session.getHistory('players','last'));
+      let $c = setInterval(() => {
+	let his=that.session.getHistory('players','last');
+	if(his==undefined)return;
+        let $arr = toArray(his);
         console.log($arr)
         let $p = '';
         for(let i = 0 ; i < $arr.length ; i++){
           $p = [$p,i,'.',$arr[i],'; '].join('');
         }
         that.sendText(now() + 'Online players: ' + $p);
-      }, 500);
+	clearInterval($c);
+      }, 50);
     }else if(type == 'locate'){
       let $d = this.session.getHistory('locate','last');
       return $d;
@@ -192,6 +202,7 @@ class BuildSession {
   }
 
   Paint(path, x, y, z){
+	if(path==""){this.showhelp({showhelp:"paint",error:true});return;}
     this.sendText('Drawing')
     let BuildList = [];
     get_pixels(path, (err, pixels) => {
@@ -244,6 +255,7 @@ class BuildSession {
 
       t++;
       if(t == map.length){
+	this.sendText(now()+"Paint: Done.");
         clearInterval($i);
       }
     }, 10);
