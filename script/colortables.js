@@ -52,12 +52,12 @@ module.exports = [
 {
     'data': 14,
     'name': 'log',
-    'color': [266, 266, 219, 255]
+    'color': [207, 206, 201, 255]
 },
 {
     'data': 15,
     'name': 'log',
-    'color': [93, 74, 45, 255]
+    'color': [87, 68, 27, 255]
 },
 {
     'data': 0,
@@ -112,27 +112,27 @@ module.exports = [
 {
     'data': 0,
     'name': 'quartz_ore',
-    'color': [178, 144, 139, 255]
+    'color': [125, 85, 80, 255]
 },
 {
     'data': 0,
     'name': 'redstone_block',
-    'color': [146, 12, 0, 255]
+    'color': [171, 28, 9, 255]
 },
 {
     'data': 0,
     'name': 'sandstone',
-    'color': [211, 202, 156, 255]
+    'color': [218, 210, 159, 255]
 },
 {
     'data': 0,
     'name': 'sponge',
-    'color': [208, 210, 70, 255]
+    'color': [195, 196, 85, 255]
 },
 {
     'data': 0,
     'name': 'slime',
-    'color': [129, 209, 110, 255]
+    'color': [121, 200, 101, 255]
 },
 {
     'data': 0,
@@ -207,22 +207,22 @@ module.exports = [
 {
     'data': 1,
     'name': 'stone',
-    'color': [165, 119, 102, 255]
+    'color': [153, 114, 99, 255]
 },
 {
     'data': 2,
     'name': 'stone',
-    'color': [162, 116, 99, 255]
+    'color': [159, 115, 98, 255]
 },
 {
     'data': 5,
     'name': 'stone',
-    'color': [116, 116, 119, 255]
+    'color': [180, 180, 183, 255]
 },
 {
     'data': 0,
     'name': 'stone',
-    'color': [118, 118, 118, 255]
+    'color': [125, 125, 125, 255]
 },
 {
     'data': 0,
@@ -526,5 +526,15 @@ module.exports = [
 	"data":0,
 	"name":"obsidian",
 	"color":[20,18,30,255]
+},
+{
+	"data":1,
+	"name":"sponge",
+	"color":[160,159,63,255]
+},
+{
+	"data":0,
+	"name":"bone_block",
+	"color":[206,201,178,255]
 }
 ]
