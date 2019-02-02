@@ -129,6 +129,7 @@ function onMessage(message) {
             }
             break;
         case 'commandResponse':
+		//if(body.statusCode!=0)console.log(body); //Only for debugging
             let callback = this.responsers.get(header.requestId);
             this.responsers.delete(header.requestId);
             if(!!body.position){
