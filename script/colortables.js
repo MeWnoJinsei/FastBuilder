@@ -388,85 +388,143 @@ module.exports = [
 	"data":15,
 	"name":"concrete",
 	"color":[8,10,15,255]
-}/*, //
+},
 {
 	"data":0,
-	"name":"concretepowder",
-	"color":[207,213,214,255]
+	"name":"coal_block",
+	"color":[19,19,19,255]
 },
 {
-	"data":1,
-	"name":"concretepowder",
-	"color":[224,97,0,255]
+	"data":0,
+	"name": "diamond_block",
+	"color":[98,219,214,255]
 },
 {
-	"data":2,
-	"name":"concretepowder",
-	"color":[169,48,159,255]
+	"data":0,"name":"dried_kelp_block","color":[50,59,39,255]
 },
 {
-	"data":3,
-	"name":"concretepowder",
-	"color":[35,137,198,255]
+	"data":0,
+	"name":"end_bricks",
+	"color":[226,231,171,255]
 },
 {
-	"data":4,
-	"name":"concretepowder",
-	"color":[241,175,21,255]
+	"data":0,
+	"name":"furnace",
+	"color":[96,96,96,255]
 },
 {
-	"data":5,
-	"name":"concretepowder",
-	"color":[94,169,25,255]
+	"data":0,
+	"name":"hay_block",
+	"color":[169,140,16,255]
 },
 {
-	"data":6,
-	"name":"concretepowder",
-	"color":[213,101,142,255]
+	"data":0,
+	"name":"iron_block",
+	"color":[219,219,219,255]
 },
 {
-	"data":7,
-	"name":"concretepowder",
-	"color":[55,58,62,255]
+	"data":0,
+	"name":"stripped_birch_log",
+	"color":[185,161,104,255]
 },
 {
-	"data":8,
-	"name":"concretepowder",
-	"color":[125,125,115,255]
+	"data":0,
+	"name":"stripped_acacia_log",
+	"color":[167,92,59,255]
 },
 {
-	"data":9,
-	"name":"concretepowder",
-	"color":[21,119,136,255]
+	"data":0,
+	"name":"stripped_jungle_log",
+	"color":[171,134,85,255]
 },
 {
-	"data":10,
-	"name":"concretepowder",
-	"color":[100,32,156,255]
+	"data":0,
+	"name":"stripped_oak_log",
+	"color":[164,134,81,255]
 },
 {
-	"data":11,
-	"name":"concretepowder",
-	"color":[45,47,143,255]
+	"data":0,
+	"name":"stripped_spruce_log",
+	"color":[106,83,48,255]
 },
 {
-	"data":12,
-	"name":"concretepowder",
-	"color":[96,60,32,255]
+	"data":0,
+	"name":"brick_block",
+	"color":[147,100,87,255]
 },
 {
-	"data":13,
-	"name":"concretepowder",
-	"color":[73,91,36,255]
+	"data":0,
+	"name":"clay",
+	"color":[159,164,177,255]
 },
 {
-	"data":14,
-	"name":"concretepowder",
-	"color":[142,33,33,255]
+	"data":0,
+	"name":"crafting_table",
+	"color":[107,71,43,255]
 },
 {
-	"data":15,
-	"name":"concretepowder",
-	"color":[8,10,15,255]
-}*/
+	"data":0,
+	"name":"end_stone",
+	"color":[221,224,165,255]
+},
+{
+	"data":0,
+	"name":"red_glazed_terracotta",
+	"color":[182,60,53,255]
+},
+{
+	"data":0,
+	"name":"noteblock",
+	"color":[101,68,51,255]
+},
+{
+	"data":0,
+	"name":"sealantern",
+	"color":[172,200,190,255]
+},
+{
+	"data":0,
+	"name":"soul_sand",
+	"color":[85,64,52,255]
+},
+{
+	"data":0,
+	"name":"prismarine",
+	"color":[100,152,142,255]
+},
+{
+	"data":0,
+	"name":"pink_glazed_terracotta",
+	"color":[235,155,182,255]
+},
+{
+	"data":0,
+	"name":"purple_glazed_terracotta",
+	"color":[110,48,152,255]
+},
+{
+	"data":0,
+	"name":"magenta_glazed_terracotta",
+	"color":[208,100,192,255]
+},
+{
+	"data":0,
+	"name":"gray_glazed_terracotta",
+	"color":[83,90,94,255]
+},
+{
+	"data":0,
+	"name":"yellow_glazed_terracotta",
+	"color":[234,192,89,255]
+},
+{
+	"data":0,
+	"name":"blue_glazed_terracotta",
+	"color":[47,65,139,255]
+},
+{
+	"data":0,
+	"name":"obsidian",
+	"color":[20,18,30,255]
+}
 ]
