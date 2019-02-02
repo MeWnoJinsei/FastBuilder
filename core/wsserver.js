@@ -128,20 +128,10 @@ function onMessage(message) {
                 }, this);
             }
             break;
+
         case 'commandResponse':
-		//if(body.statusCode!=0)console.log(body); //Only for debugging
             let callback = this.responsers.get(header.requestId);
             this.responsers.delete(header.requestId);
-            if(!!body.position){
-              History.position.push([body.position.x,body.position.y,body.position.z]);
-              this.emit('position',History.position);
-            }
-            if(!!body.feature){
-              History.locate.push([body.destination.x,body.destination.y,body.destination.z]);
-            }
-            if(!!body.players){
-              History.players.push(toArray(body.players));
-            }
             if (callback) {
                 try {
                     callback(json.body, json);
@@ -150,6 +140,7 @@ function onMessage(message) {
                 }
             }
             break;
+
         case 'error':
             this.emit('mcerror', new Error(json.body.statusMessage), json);
             break;

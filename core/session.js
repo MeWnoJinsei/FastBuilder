@@ -5,6 +5,11 @@ const color = require('../script/colortables');
 const get_pixels = require('get-pixels');
 
 let $default = {};
+let $history = {
+  players:[],
+  locate:[],
+  position:[]
+};
 
 class BuildSession {
   static createAndBind (session){
@@ -67,12 +72,12 @@ class BuildSession {
       }
       return true;
     }else if(args.showhelp){
-	if(args.error){
-		this.sendText(helps[args.showhelp],"§4");
-	}else{
-        	this.sendText(helps[args.showhelp]);
-	}
-        return true;
+	    if(args.error){
+		     this.sendText(helps[args.showhelp],'§4');
+      }else{
+        this.sendText(helps[args.showhelp]);
+      }
+      return true;
     }else{
       return false;
     }
@@ -114,7 +119,11 @@ class BuildSession {
         return;
       }
 
-      if(build.entityMod){
+      if(foo == 'paint'){
+        this.sendText(now() + 'Loading pixels painting module..','§e');
+      }
+
+      else if(build.entityMod){
         this.sendText(now() + 'Time need: ' + ((map.length * delays * build.height) / 1000) + 's.');
       }
       else{
@@ -145,69 +154,82 @@ class BuildSession {
             break;
 
           default:
-		throw new Error("Unknown");
-            //console.log(now() + 'Unknown error!!Exiting...');
-            //process.exit();
+		        throw new Error('Unknown function.');
             break;
         }
     }
 
     if(collect.writeData){
       $header(true, header);
-      this.sendText('Data wrote!');
+      this.sendText(now() + 'Data wrote!');
     }
 
     if(collect.get){
     this.getValue(collect.get);
     }
+
     else if(collect.locate){
-      this.session.sendCommand(['locate ',collect.locate].join(' '));
-      let that = this;
-      let $t = setTimeout(() => {
-        let $a = that.getValue('locate').join(' ');
-        that.session.sendCommand(['tp','@s',$a].join(' '));
-        that.sendText([now(),'FastLocate: ',collect.locate].join(' '));
-      }, 150);
+      this.getValue('locate',collect.locate);
     }
   }
 
-  getValue(type){
+  getValue(type, other){
     let that = this;
+
     if(type == 'pos' || type == 'position'){
-      this.session.sendCommand(['testforblock','~','~','~','air'].join(' '));
-       let $b = setInterval(() =>{
-         $default.position = this.session.getHistory('position','last');
-		if($default.position==undefined)return;
-         that.sendText(now() + 'Position get: ' + $default.position.join(' '));
-		clearInterval($b);
-       },50);
-    }else if(type == 'player' || type == 'players'){
-      this.session.sendCommand('listd');
-      let $c = setInterval(() => {
-	let his=that.session.getHistory('players','last');
-	if(his==undefined)return;
-        let $arr = toArray(his);
-        console.log($arr)
+      this.session.sendCommand(['testforblock','~','~','~','air'].join(' '),(body) => {
+        let pos = [body.position.x,body.position.y,body.position.z];
+        $default.position = pos;
+        $history.position.push(pos);
+        this.sendText('Position get: ' + $default.position.join(' '));
+      });
+    }
+
+    else if(type == 'player' || type == 'players'){
+      this.session.sendCommand('listd',(body) => {
+        let $players = body.players;
+        $history.players.push($players);
+
+        console.log($players)
         let $p = '';
-        for(let i = 0 ; i < $arr.length ; i++){
-          $p = [$p,i,'.',$arr[i],'; '].join('');
+        for(let i = 0 ; i < $history.players[$history.players.length - 1].length ; i++){
+          $p = [$p,i,'.',$history.players[$history.players.length - 1][i],'; '].join('');
         }
-        that.sendText(now() + 'Online players: ' + $p);
-	clearInterval($c);
-      }, 50);
-    }else if(type == 'locate'){
-      let $d = this.session.getHistory('locate','last');
-      return $d;
+
+        this.sendText(now() + 'Online players: ' + $p);
+      });
+    }
+
+    else if(type == 'locate'){
+      this.session.sendCommand(['locate',other].join(' '),(body) => {
+        if(!body.destination){
+          this.sendText('Feature not found!');
+          return;
+        }
+        else{
+          let $locate = [body.destination.x,body.destination.y,body.destination.z];
+          $history.locate.push($locate);
+          this.sendText('Feature found: ' + $locate.join(' '));
+          this.session.sendCommand('tp '+ $locate.join(' '));
+        }
+      });
     }
   }
 
   Paint(path, x, y, z){
-	if(path==""){this.showhelp({showhelp:"paint",error:true});return;}
-    this.sendText('Drawing')
+	if(!path){
+    this.showhelp({
+      showhelp:"paint",
+      error:true
+    });
+    return;
+  }
+    this.sendText(now() + 'PaintingGenerator: Loaded.','§e');
     let BuildList = [];
     get_pixels(path, (err, pixels) => {
+      this.sendText(now() + 'PaintingGenerator: Start loading image from the path.','§e');
       if(err){
-        this.sendText(err)
+        this.sendText('PaintingGenerator: ' + err, '§e');
         return;
       }
 
@@ -232,8 +254,8 @@ class BuildSession {
   }
 
   draw(map, w, h, x, y, z){
-    this.sendText(now() + 'Drawing image...');
-    this.sendText(now() + 'Paint: time need: ' + (map.length / 100) + 's.');
+    this.sendText(now() + 'PaintingGenerator: Start drawing','§e');
+    this.sendText(now() + 'PaintingGenerator: Time need: ' + (map.length / 100) + 's.','§e');
     let max = w + x;
     let min = x;
     let t = 0;
@@ -255,7 +277,7 @@ class BuildSession {
 
       t++;
       if(t == map.length){
-	this.sendText(now()+"Paint: Done.");
+	      this.sendText(now() + 'PaintingGenerator: Done.','§e');
         clearInterval($i);
       }
     }, 10);
