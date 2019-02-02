@@ -15,7 +15,8 @@ module.exports  = {
     'sphere':'sphere -s <shape:<solid:hollow>> -r <radius:Int>  --Create sphere.',
     'ellipse':'ellipse -f <facing:<x:y:z>> -l <length:Int> -w <width:Int>  --Create ellipse.',
     'ellipsoid':'ellipsoid -l <length:Int> -w <width:Int> -h <height:Int>  --Create ellipsoid.',
-    'torus':'torus -f <facing:<x:y:z>> -w <width:INt> -r <radius:Int> -a <accuracy:Int>  --Create torus.',
-    'cone':'cone -f <facing<x:y:z>> -r <radius:Int> -h <height:Int> -a <accuracy:Int>  --Create cone.'
+    'torus':'torus -f <facing:<x:y:z>> -w <width:Int> -r <radius:Int> -a <accuracy:Int>  --Create torus.',
+    'cone':'cone -f <facing<x:y:z>> -r <radius:Int> -h <height:Int> -a <accuracy:Int>  --Create cone.',
+	"paint":"paint -z <path>"
   }
 }

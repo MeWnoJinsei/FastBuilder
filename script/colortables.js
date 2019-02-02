@@ -2,7 +2,7 @@ module.exports = [
 {
     'data': 0,
     'name': 'dirt',
-    'color': [139, 99, 68, 255]
+    'color': [134, 96, 67, 255]
 },
 {
     'data': 0,
@@ -12,12 +12,12 @@ module.exports = [
 {
     'data': 0,
     'name': 'cobblestone',
-    'color': [126, 126, 126, 255]
+    'color': [123, 123, 123, 255]
 },
 {
     'data': 0,
     'name': 'bedrock',
-    'color': [87, 87, 87, 255]
+    'color': [84, 84, 84, 255]
 },
 {
     'data': 4,
@@ -32,22 +32,22 @@ module.exports = [
 {
     'data': 0,
     'name': 'emerald_block',
-    'color': [103, 235, 141, 255]
+    'color': [81, 217, 117, 255]
 },
 {
     'data': 0,
     'name': 'glowstone',
-    'color': [227, 189, 138, 255]
+    'color': [144, 118, 70, 255]
 },
 {
     'data': 0,
     'name': 'gold_block',
-    'color': [255, 243, 72, 255]
+    'color': [249, 236, 79, 255]
 },
 {
     'data': 0,
     'name': 'lapis_block',
-    'color': [20, 69, 179, 255]
+    'color': [39, 67, 138, 255]
 },
 {
     'data': 14,
@@ -62,7 +62,7 @@ module.exports = [
 {
     'data': 0,
     'name': 'melon_block',
-    'color': [175, 175, 39, 255]
+    'color': [151, 154, 37, 255]
 },
 {
     'data': 0,
@@ -72,7 +72,7 @@ module.exports = [
 {
     'data': 0,
     'name': 'netherrack',
-    'color': [81, 43, 43, 255]
+    'color': [111, 54, 53, 255]
 },
 {
     'data': 1,
