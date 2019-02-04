@@ -3,25 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b1311408-cb91-4c6c-8a74-b9dd296ec510" name="Default Changelist" comment="Merge branch 'master' of https://github.com/CAIMEOX/FastBuilder&#10;&#10;# Conflicts:&#10;#&#9;Algorithms.js&#10;#&#9;FastBuilder.md&#10;#&#9;fastbuilder.js">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OldIndex.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Oldcore/Algorithms.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Oldcore/LReader.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Oldcore/Reader.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Oldcore/constants.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Oldcore/helps.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Oldcore/main-test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/core/algorithms.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/algorithms.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/wsserver.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/wsserver.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/button.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/checkboxes.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/checkboxes.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/text.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/FastBuilder.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/session.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/session.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/colortables.js" beforeDir="false" afterPath="$PROJECT_DIR$/script/colortables.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -34,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/session.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="59" column="16" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
+            <state relative-caret-position="552">
+              <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
               <folding>
                 <element signature="n#!!block;n#createAndBind#0;n#BuildSession#0" />
                 <element signature="n#!!block;n#init#0;n#BuildSession#0" />
@@ -47,6 +31,16 @@
                 <element signature="n#!!block;n#showhelp#0;n#BuildSession#0" />
                 <element signature="n#!!block;n#doit#0;n#BuildSession#0" />
                 <element signature="n#!!block;n#getValue#0;n#BuildSession#0" />
+                <element signature="n#!!block;n#Paint#0;n#BuildSession#0" />
+                <element signature="n#!!block;n#draw#0;n#BuildSession#0" />
+                <element signature="n#!!block;n#pumpkins#0;n#BuildSession#0" />
+                <element signature="n#!!block;n#forestgen#0;n#BuildSession#0" />
+                <element signature="n#!!block;n#forestOak#0;n#BuildSession#0" />
+                <element signature="n#!!block;n#forestBirch#0;n#BuildSession#0" />
+                <element signature="n#!!block;n#forestSpruce#0;n#BuildSession#0" />
+                <element signature="n#!!block;n#forestJungle#0;n#BuildSession#0" />
+                <element signature="n#!!block;n#createPumpkins#0;n#BuildSession#0" />
+                <element signature="n#!!block;n#setTile#0;n#BuildSession#0" />
               </folding>
             </state>
           </provider>
@@ -56,19 +50,10 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="568">
-                <caret line="132" column="25" lean-forward="true" selection-start-line="132" selection-start-column="25" selection-end-line="132" selection-end-column="25" />
+              <first_editor relative-caret-position="3168">
+                <caret line="132" column="25" selection-start-line="132" selection-start-column="25" selection-end-line="132" selection-end-column="25" />
               </first_editor>
               <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/colorize.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
             </state>
           </provider>
         </entry>
@@ -77,16 +62,25 @@
         <entry file="file://$PROJECT_DIR$/core/argv.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="72">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/wsserver.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
+            <state relative-caret-position="3144">
               <caret line="131" column="1" selection-start-line="131" selection-start-column="1" selection-end-line="131" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="768">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
             </state>
           </provider>
         </entry>
@@ -104,14 +98,8 @@
         <entry file="file://$PROJECT_DIR$/core/algorithms.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="192">
-              <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+              <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
               <folding>
-                <element signature="e#452#2151#0" />
-                <element signature="n#!!block;n#round#0;n#Algorithms#0" />
-                <element signature="n#!!block;n#circle#0;n#Algorithms#0" />
-                <element signature="n#!!block;n#sphere#0;n#Algorithms#0" />
-                <element signature="n#!!block;n#ellipse#0;n#Algorithms#0" />
-                <element signature="n#!!block;n#ellipsoid#0;n#Algorithms#0" />
                 <element signature="n#!!block;n#torus#0;n#Algorithms#0" />
                 <element signature="n#!!block;n#cone#0;n#Algorithms#0" />
                 <element signature="n#!!block;n#ligature#0;n#Algorithms#0" />
@@ -136,6 +124,11 @@
       <find>/</find>
       <find>Math.round</find>
       <find>buildHeader</find>
+      <find>setblock</find>
+      <find>18</find>
+      <find>var</find>
+      <find>0</find>
+      <find>setTile</find>
     </findStrings>
     <replaceStrings>
       <replace>helps</replace>
@@ -144,6 +137,11 @@
       <replace>§a/</replace>
       <replace>Math.cell</replace>
       <replace>Math.ceil</replace>
+      <replace>setblock</replace>
+      <replace>'leaves'</replace>
+      <replace>let</replace>
+      <replace>'air'</replace>
+      <replace>this.setblock</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -176,11 +174,11 @@
         <option value="$PROJECT_DIR$/core/TestReader.js" />
         <option value="$PROJECT_DIR$/core/Reader.js" />
         <option value="$PROJECT_DIR$/core/main-test.js" />
-        <option value="$PROJECT_DIR$/core/session.js" />
         <option value="$PROJECT_DIR$/Main.js" />
         <option value="$PROJECT_DIR$/core/algorithms.js" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/core/wsserver.js" />
+        <option value="$PROJECT_DIR$/core/session.js" />
       </list>
     </option>
   </component>
@@ -196,7 +194,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -218,6 +215,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -318,11 +316,13 @@
       <workItem from="1548395003038" duration="1558000" />
       <workItem from="1548398869308" duration="59000" />
       <workItem from="1548419044710" duration="3000" />
+      <workItem from="1549201445035" duration="1414000" />
+      <workItem from="1549245831038" duration="2943000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139070000" />
+    <option name="totallyTimeSpent" value="143629000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -337,21 +337,21 @@
     <frame x="0" y="31" width="1920" height="1049" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48876405" visible="true" weight="0.13255568" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48876405" visible="true" weight="0.13255568" />
       <window_info id="Structure" order="1" sideWeight="0.51123595" side_tool="true" weight="0.1329114" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32903227" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32903227" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.68233943" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32903227" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32903227" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32798165" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.18348624" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.34862384" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -454,26 +454,72 @@
     <entry file="file://$PROJECT_DIR$/x" />
     <entry file="file://$PROJECT_DIR$/core/Reader.js" />
     <entry file="file://$PROJECT_DIR$/core/main-test.js" />
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html" />
     <entry file="file://$PROJECT_DIR$/client.html" />
+    <entry file="file://$PROJECT_DIR$/images/FastBuilder.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/core/colorize.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/session.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
+          <folding>
+            <element signature="n#!!block;n#createAndBind#0;n#BuildSession#0" />
+            <element signature="n#!!block;n#init#0;n#BuildSession#0" />
+            <element signature="n#!!block;n#onChatMessage#0;n#BuildSession#0" />
+            <element signature="n#!!block;n#sendText#0;n#BuildSession#0" />
+            <element signature="n#!!block;n#showhelp#0;n#BuildSession#0" />
+            <element signature="n#!!block;n#doit#0;n#BuildSession#0" />
+            <element signature="n#!!block;n#getValue#0;n#BuildSession#0" />
+            <element signature="n#!!block;n#Paint#0;n#BuildSession#0" />
+            <element signature="n#!!block;n#draw#0;n#BuildSession#0" />
+            <element signature="n#!!block;n#pumpkins#0;n#BuildSession#0" />
+            <element signature="n#!!block;n#forestgen#0;n#BuildSession#0" />
+            <element signature="n#!!block;n#forestOak#0;n#BuildSession#0" />
+            <element signature="n#!!block;n#forestBirch#0;n#BuildSession#0" />
+            <element signature="n#!!block;n#forestSpruce#0;n#BuildSession#0" />
+            <element signature="n#!!block;n#forestJungle#0;n#BuildSession#0" />
+            <element signature="n#!!block;n#createPumpkins#0;n#BuildSession#0" />
+            <element signature="n#!!block;n#setTile#0;n#BuildSession#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="3168">
+            <caret line="132" column="25" selection-start-line="132" selection-start-column="25" selection-end-line="132" selection-end-column="25" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/argv.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/wsserver.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3144">
+          <caret line="131" column="1" selection-start-line="131" selection-start-column="1" selection-end-line="131" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="768">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
         </state>
       </provider>
     </entry>
@@ -487,55 +533,13 @@
     <entry file="file://$PROJECT_DIR$/core/algorithms.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
-          <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
           <folding>
-            <element signature="e#452#2151#0" />
-            <element signature="n#!!block;n#round#0;n#Algorithms#0" />
-            <element signature="n#!!block;n#circle#0;n#Algorithms#0" />
-            <element signature="n#!!block;n#sphere#0;n#Algorithms#0" />
-            <element signature="n#!!block;n#ellipse#0;n#Algorithms#0" />
-            <element signature="n#!!block;n#ellipsoid#0;n#Algorithms#0" />
             <element signature="n#!!block;n#torus#0;n#Algorithms#0" />
             <element signature="n#!!block;n#cone#0;n#Algorithms#0" />
             <element signature="n#!!block;n#ligature#0;n#Algorithms#0" />
             <element signature="n#!!block;n#multiDimensionalUnique#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/images/FastBuilder.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="568">
-            <caret line="132" column="25" lean-forward="true" selection-start-line="132" selection-start-column="25" selection-end-line="132" selection-end-column="25" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/session.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="59" column="16" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
-          <folding>
-            <element signature="n#!!block;n#createAndBind#0;n#BuildSession#0" />
-            <element signature="n#!!block;n#init#0;n#BuildSession#0" />
-            <element signature="n#!!block;n#onChatMessage#0;n#BuildSession#0" />
-            <element signature="n#!!block;n#sendText#0;n#BuildSession#0" />
-            <element signature="n#!!block;n#showhelp#0;n#BuildSession#0" />
-            <element signature="n#!!block;n#doit#0;n#BuildSession#0" />
-            <element signature="n#!!block;n#getValue#0;n#BuildSession#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/wsserver.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="131" column="1" selection-start-line="131" selection-start-column="1" selection-end-line="131" selection-end-column="1" />
         </state>
       </provider>
     </entry>

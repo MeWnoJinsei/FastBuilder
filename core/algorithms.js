@@ -68,7 +68,7 @@ class Algorithms {
                   map:[0,0,0]
               }
               break;
-          default:break;
+          default: return {foo:type,map:[0,0,0]};
           }
     }
 
@@ -225,35 +225,61 @@ class Algorithms {
         return session;
     }
 
+    static ellipticTorus(d, a, b, c, x, y, z, f) {
+    	let session = [];
+    	let accuracy = 1 / f;
+    	let max = Math.PI * 2;
+    	switch(d) {
+    		case 'z':
+    		for(let v = 0 ; v < max ; v = v + accuracy){
+    			for(let u = 0 ; u < max ; u = u + accuracy){
+    				session.push([x + Math.round((c + (a * Math.cos(v))) * Math.cos(u)), y + Math.round((c + (a * Math.cos(v))) * Math.sin(u)), z + Math.round(b * Math.sin(v))]);
+    			}
+    		}
+    		break;
+    		case 'y':
+    		for(let v = 0 ; v < max ; v = v + accuracy){
+    			for(let u = 0 ; u < max ; u = u + accuracy){
+    				session.push([x + Math.round((c + (a * Math.cos(v))) * Math.cos(u)), y + Math.round(b * Math.sin(v)), z + Math.round((c + (a * Math.cos(v))) * Math.sin(u))]);
+    			}
+    		}
+    		break;
+    		case 'x':
+    		for(let v = 0 ; v < max ; v = v + accuracy){
+    			for(let u = 0 ; u < max ; u = u + accuracy){
+    				session.push([x + Math.round(b * Math.sin(v)), y + Math.round((c + (a * Math.cos(v))) * Math.sin(u)), z + Math.round((c + (a * Math.cos(v))) * Math.cos(u))]);
+    			}
+    		}
+    		break;
+    		default:
+    		break;
+    	}
+    }
+
     static torus(d, a, c, x, y, z, f) {
         let session = [];
-        a = a * 1;
-        c = c * 1;
-        let session = [];
+        //let session = [];
         let accuracy = 1 / f;
-        let umin = 0;
-        let umax = Math.PI * 2;
-        let vmin = 0;
-        let vmax = Math.PI * 2;
+        let max = Math.PI * 2;
         switch (d) {
         case "x":
-            for (let v = vmin; v < vmax; v = v + accuracy) {
-                for (let u = umin; u < umax; u = u + accuracy) {
+            for (let v = 0; v < max; v = v + accuracy) {
+                for (let u = 0; u < max; u = u + accuracy) {
                     session.push([Math.round(Math.cos(u) * (a * Math.cos(v) + c)) + x, Math.round(Math.sin(u) * (a * Math.cos(v) + c)) + y, Math.round(a * Math.sin(v)) + z]);
                 }
             }
             break;
 
         case "y":
-            for (let v = vmin; v < vmax; v = v + accuracy) {
-                for (let u = umin; u < umax; u = u + accuracy) {
+            for (let v = 0; v < max; v = v + accuracy) {
+                for (let u = 0; u < max; u = u + accuracy) {
                     session.push([Math.round(Math.cos(u) * (a * Math.cos(v) + c)) + x, Math.round(a * Math.sin(v)) + y, Math.round(Math.sin(u) * (a * Math.cos(v) + c)) + z]);
                 }
             }
             break;
         case "z":
-            for (let v = vmin; v < vmax; v = v + accuracy) {
-                for (let u = umin; u < umax; u = u + accuracy) {
+            for (let v = 0; v < max; v = v + accuracy) {
+                for (let u = 0; u < max; u = u + accuracy) {
                     session.push([Math.round(a * Math.sin(v)) + x, Math.round(Math.cos(u) * (a * Math.cos(v) + c)) + y, Math.round(Math.sin(u) * (a * Math.cos(v) + c)) + z]);
                 }
             }

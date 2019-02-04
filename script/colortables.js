@@ -6,11 +6,6 @@ module.exports = [
 },
 {
     'data': 0,
-    'name': 'double_stone_slab',
-    'color': [166, 166, 166, 255]
-},
-{
-    'data': 0,
     'name': 'cobblestone',
     'color': [123, 123, 123, 255]
 },
@@ -20,13 +15,8 @@ module.exports = [
     'color': [84, 84, 84, 255]
 },
 {
-    'data': 4,
-    'name': 'double_stone_slab',
-    'color': [143, 89, 75, 255]
-},
-{
-    'data': 6,
-    'name': 'double_stone_slab',
+    'data': 0,
+    'name': 'quartz_block',
     'color': [237, 235, 228, 255]
 },
 {
@@ -64,46 +54,46 @@ module.exports = [
     'name': 'melon_block',
     'color': [151, 154, 37, 255]
 },
-{
-    'data': 0,
-    'name': 'planks',
-    'color': [179, 146, 90, 255]
-},
+// {
+//     'data': 0,
+//     'name': 'planks',
+//     'color': [179, 146, 90, 255]
+// },
 {
     'data': 0,
     'name': 'netherrack',
     'color': [111, 54, 53, 255]
 },
-{
-    'data': 1,
-    'name': 'planks',
-    'color': [116, 87, 52, 255]
-},
-{
-    'data': 3,
-    'name': 'planks',
-    'color': [178, 131, 93, 255]
-},
-{
-    'data': 2,
-    'name': 'planks',
-    'color': [212, 193, 136, 255]
-},
-{
-    'data': 5,
-    'name': 'planks',
-    'color': [71, 46, 21, 255]
-},
-{
-    'data': 0,
-    'name': 'planks',
-    'color': [168, 137, 85, 255]
-},
-{
-    'data': 4,
-    'name': 'planks',
-    'color': [175, 96, 53, 255]
-},
+// {
+//     'data': 1,
+//     'name': 'planks',
+//     'color': [116, 87, 52, 255]
+// },
+// {
+//     'data': 3,
+//     'name': 'planks',
+//     'color': [178, 131, 93, 255]
+// },
+// {
+//     'data': 2,
+//     'name': 'planks',
+//     'color': [212, 193, 136, 255]
+// },
+// {
+//     'data': 5,
+//     'name': 'planks',
+//     'color': [71, 46, 21, 255]
+// },
+// {
+//     'data': 0,
+//     'name': 'planks',
+//     'color': [168, 137, 85, 255]
+// },
+// {
+//     'data': 4,
+//     'name': 'planks',
+//     'color': [175, 96, 53, 255]
+// },
 {
     'data': 0,
     'name': 'purpur_block',
@@ -119,11 +109,11 @@ module.exports = [
     'name': 'redstone_block',
     'color': [171, 28, 9, 255]
 },
-{
-    'data': 0,
-    'name': 'sandstone',
-    'color': [218, 210, 159, 255]
-},
+// {
+//     'data': 0,
+//     'name': 'sandstone',
+//     'color': [218, 210, 159, 255]
+// },
 {
     'data': 0,
     'name': 'sponge',
@@ -402,11 +392,11 @@ module.exports = [
 {
 	"data":0,"name":"dried_kelp_block","color":[50,59,39,255]
 },
-{
-	"data":0,
-	"name":"end_bricks",
-	"color":[226,231,171,255]
-},
+// {
+// 	"data":0,
+// 	"name":"end_bricks",
+// 	"color":[226,231,171,255]
+// },
 {
 	"data":0,
 	"name":"furnace",
