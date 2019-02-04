@@ -13,8 +13,8 @@ function hasFlags(argv, input, alias){
 }
 
 function isCmd(args) {
-	if(args == undefined)return false;
-	cmdList = ['round','circle','ellipse','ellipsoid','cone','torus','sphere','su','help','let','paint']
+	if(!args)return false;
+	cmdList = ['round','circle','ellipse','ellipsoid','cone','torus','sphere','su','help','let','paint'];
 	for(let key in cmdList){
 		if(!!~args.indexOf(cmdList[key])){
 			return true;

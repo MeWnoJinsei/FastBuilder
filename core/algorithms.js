@@ -1,344 +1,4 @@
-class Algorithms {
-    static Builder (header, build) {
-        let $b = new Algorithms();
-        this.header = header;
-        this.build = build;
-        let [x,y,z] = header.position;
-
-        let {
-            type,
-            direction,
-            shape,
-            radius,
-            accuracy,
-            delays,
-            width,
-            length,
-            height,
-            entityMod,
-            path
-        } = build;
-
-        switch (type) {
-          case 'round':
-              return {
-                  map:this.round(direction, radius, x, y, z),
-                  foo: entityMod ? 'setLongEntity':'setLongTile'
-              }
-              break;
-          case 'circle':
-              return {
-                  map:this.circle(direction, radius, x, y, z),
-                  foo: entityMod ? 'setLongEntity':'setLongTile'
-              }
-              break;
-          case 'sphere':
-              return {
-                  map:this.sphere(shape, radius, x, y, z),
-                  foo: entityMod ? 'setEntity':'setTile'
-              }
-              break;
-          case 'ellipse':
-              return {
-                  map:this.ellipse(direction, length, width, x, y, z),
-                  foo: entityMod ? 'setLongEntity':'setLongTile'
-              }
-              break;
-          case 'ellipsoid':
-              return {
-                  map:this.ellipsoid(length, width, height, x, y, z),
-                  foo: entityMod ? 'setEntity':'setTile'
-              }
-              break;
-          case 'torus':
-              return {
-                  map:this.torus(direction, width, radius, x, y, z, accuracy),
-                  foo: entityMod ? 'setEntity':'setTile'
-              }
-              break;
-          case 'cone':
-              return {
-                  map:this.cone(direction, height, radius, x, y, z, accuracy),
-                  foo: entityMod ? 'setEntity':'setTile'
-              };
-              break;
-          case 'paint':
-              return {
-                  foo:'paint',
-                  map:[0,0,0]
-              }
-              break;
-          default: return {foo:type,map:[0,0,0]};
-          }
-    }
-
-    static round(direction, r, x, y, z) {
-        let session = [];
-        switch (direction) {
-        case "x":
-            for (let i = -r; i <= r; i++) {
-                for (let j = -r; j <= r; j++) {
-                    if (i * i + j * j < r * r) {
-                        session.push([x, y + i, z + j]);
-                    }
-                }
-            }
-            break;
-        case "y":
-            for (let i = -r; i <= r; i++) {
-                for (let j = -r; j <= r; j++) {
-                    if (i * i + j * j < r * r) {
-                        session.push([x + i, y, z + j]);
-                    }
-                }
-            }
-            break;
-        case "z":
-            for (let i = -r; i <= r; i++) {
-                for (let j = -r; j <= r; j++) {
-                    if (i * i + j * j < r * r) {
-                        session.push([x + i, y + j, z]);
-                    }
-                }
-            }
-            break;
-        default:
-        break;
-        }
-        return session;
-    }
-
-    static circle(direction, r, x, y, z) {
-        let session = [];
-        switch (direction) {
-        case "x":
-            for (let i = -r; i <= r; i++) {
-                for (let j = -r; j <= r; j++) {
-                    if (i * i + j * j < r * r && i * i + j * j >= (r - 1) * (r - 1)) {
-                        session.push([x, y + i, z + j]);
-                    }
-                }
-            }
-            break;
-        case "y":
-            for (let i = -r; i <= r; i++) {
-                for (let j = -r; j <= r; j++) {
-                    if (i * i + j * j < r * r && i * i + j * j >= (r - 1) * (r - 1)) {
-                        session.push([x + i, y, z + j]);
-                    }
-                }
-            }
-            break;
-        case "z":
-            for (let i = -r; i <= r; i++) {
-                for (let j = -r; j <= r; j++) {
-                    if (i * i + j * j < r * r && i * i + j * j >= (r - 1) * (r - 1)) {
-                        session.push([x + i, y + j, z]);
-                    }
-                }
-            }
-            break;
-        default:
-            break;
-        }
-        return session;
-    }
-
-    static sphere(d, r, x, y, z) {
-        let session = [];
-        switch (d) {
-        case "hollow":
-            for (let i = -r; i <= r; i++) {
-                for (let j = -r; j <= r; j++) {
-                    for (let k = -r; k <= r; k++) {
-                        if (i * i + j * j + k * k <= r * r && i * i + j * j + k * k >= (r - 1) * (r - 1)) {
-                            session.push([x + i, y + j, z + k]);
-                        }
-                    }
-                }
-            }
-            break;
-        case "solid":
-            for (let i = -r; i <= r; i++) {
-                for (let j = -r; j <= r; j++) {
-                    for (let k = -r; k <= r; k++) {
-                        if (i * i + j * j + k * k <= r * r) {
-                            session.push([x + i, y + j, z + k]);
-                        }
-                    }
-                }
-            }
-            break;
-        default:
-            break;
-        }
-        return session;
-    }
-
-    static ellipse(d, a, b, x, y, z) {
-        let session = [];
-        switch (d) {
-        case "x":
-            for (let i = -a; i <= a; i++) {
-                for (let j = -b; j <= b; j++) {
-                    if ((i * i) / (a * a) + (j * j) / (b * b) < 1) {
-                        session.push([x, y + i, j + z]);
-                    }
-                }
-            }
-            break;
-        case "y":
-            for (let i = -a; i <= a; i++) {
-                for (let j = -b; j <= b; j++) {
-                    if ((i * i) / (a * a) + (j * j) / (b * b) < 1) {
-                        session.push([x + i, y, j + z]);
-                    }
-                }
-            }
-            break;
-        case "z":
-            for (let i = -a; i <= a; i++) {
-                for (let j = -b; j <= b; j++) {
-                    if ((i * i) / (a * a) + (j * j) / (b * b) < 1) {
-                        session.push([x + i, y + z, j]);
-                    }
-                }
-            }
-            break;
-        default:
-            break;
-        }
-        return session;
-    }
-
-    static ellipsoid(a, b, c, x, y, z) {
-        let session = [];
-        for (let i = -a; i <= a; i++) {
-            for (let j = -b; j <= b; j++) {
-                for (let k = -c; k <= c; k++) {
-                    if ((i * i) / (a * a) + (j * j) / (b * b) + (k * k) / (c * c) <= 1) {
-                        session.push([x + i, y + j, z + k]);
-                    }
-                }
-            }
-        }
-        return session;
-    }
-
-    static ellipticTorus(d, a, b, c, x, y, z, f) {
-    	let session = [];
-    	let accuracy = 1 / f;
-    	let max = Math.PI * 2;
-    	switch(d) {
-    		case 'z':
-    		for(let v = 0 ; v < max ; v = v + accuracy){
-    			for(let u = 0 ; u < max ; u = u + accuracy){
-    				session.push([x + Math.round((c + (a * Math.cos(v))) * Math.cos(u)), y + Math.round((c + (a * Math.cos(v))) * Math.sin(u)), z + Math.round(b * Math.sin(v))]);
-    			}
-    		}
-    		break;
-    		case 'y':
-    		for(let v = 0 ; v < max ; v = v + accuracy){
-    			for(let u = 0 ; u < max ; u = u + accuracy){
-    				session.push([x + Math.round((c + (a * Math.cos(v))) * Math.cos(u)), y + Math.round(b * Math.sin(v)), z + Math.round((c + (a * Math.cos(v))) * Math.sin(u))]);
-    			}
-    		}
-    		break;
-    		case 'x':
-    		for(let v = 0 ; v < max ; v = v + accuracy){
-    			for(let u = 0 ; u < max ; u = u + accuracy){
-    				session.push([x + Math.round(b * Math.sin(v)), y + Math.round((c + (a * Math.cos(v))) * Math.sin(u)), z + Math.round((c + (a * Math.cos(v))) * Math.cos(u))]);
-    			}
-    		}
-    		break;
-    		default:
-    		break;
-    	}
-    }
-
-    static torus(d, a, c, x, y, z, f) {
-        let session = [];
-        //let session = [];
-        let accuracy = 1 / f;
-        let max = Math.PI * 2;
-        switch (d) {
-        case "x":
-            for (let v = 0; v < max; v = v + accuracy) {
-                for (let u = 0; u < max; u = u + accuracy) {
-                    session.push([Math.round(Math.cos(u) * (a * Math.cos(v) + c)) + x, Math.round(Math.sin(u) * (a * Math.cos(v) + c)) + y, Math.round(a * Math.sin(v)) + z]);
-                }
-            }
-            break;
-
-        case "y":
-            for (let v = 0; v < max; v = v + accuracy) {
-                for (let u = 0; u < max; u = u + accuracy) {
-                    session.push([Math.round(Math.cos(u) * (a * Math.cos(v) + c)) + x, Math.round(a * Math.sin(v)) + y, Math.round(Math.sin(u) * (a * Math.cos(v) + c)) + z]);
-                }
-            }
-            break;
-        case "z":
-            for (let v = 0; v < max; v = v + accuracy) {
-                for (let u = 0; u < max; u = u + accuracy) {
-                    session.push([Math.round(a * Math.sin(v)) + x, Math.round(Math.cos(u) * (a * Math.cos(v) + c)) + y, Math.round(Math.sin(u) * (a * Math.cos(v) + c)) + z]);
-                }
-            }
-            break;
-        default:
-            break;
-        }
-        return multiDimensionalUnique(session);
-    }
-
-    static cone(d, h, r, x, y, z, f) {
-        let session = [];
-        h = parseInt(h);
-        r = parseInt(r);
-        let max = Math.PI * 2;
-        let accuracy = 1 / f;
-        switch (d) {
-        case "z":
-            for (let u = 0; u < h; u++) {
-                for (let i = 0; i < max; i = i + accuracy) {
-                    session.push([Math.floor(((h - u) / h) * r * Math.cos(i)) + x, Math.floor(((h - u) / h) * r * Math.sin(i)) + y, u + z]);
-                }
-            }
-            break;
-        case "y":
-            for (let u = 0; u < h; u++) {
-                for (let i = 0; i < max; i = i + accuracy) {
-                    session.push([Math.floor(((h - u) / h) * r * Math.cos(i)) + x, u + y, Math.floor(((h - u) / h) * r * Math.sin(i)) + z]);
-                }
-            }
-            break;
-        case "x":
-            for (let u = 0; u < h; u++) {
-                for (let i = 0; i < max; i = i + accuracy) {
-                    session.push([u + x, Math.floor(((h - u) / h) * r * Math.cos(i)) + y, Math.floor(((h - u) / h) * r * Math.sin(i)) + z]);
-                }
-            }
-            break;
-        default:
-            break;
-        }
-
-        return multiDimensionalUnique(session);
-    }
-
-    static ligature(PosArray1, PosArray2) {
-        let session = new Array();
-        let[i, j, k] = PosArray1;
-        let[x2, y2, z2] = PosArray2;
-        let line = Math.max(Math.abs(i - x2), Math.abs(j - y2), Math.abs(k - z2)) * 1;
-        for (let i = 0; i <= line; i++) {
-            session.push([Math.round(i + i / line * (x2 - i)), Math.round(j + i / line * (y2 - j)), Math.round(k + i / line * (z2 - k))]);
-        }
-        return session;
-    }
-}
-
-module.exports = Algorithms;
-
+const methods = new Map();
 function multiDimensionalUnique(arr) {
     let uniques = [];
     let itemsFound = {};
@@ -352,3 +12,586 @@ function multiDimensionalUnique(arr) {
     }
     return uniques;
 }
+methods.set('round',(x, y, z, input) => {
+    let {direction, radius} = input;
+    let session = [];
+    switch (direction) {
+        case "x":
+            for (let i = -radius; i <= radius; i++) {
+                for (let j = -radius; j <= radius; j++) {
+                    if (i * i + j * j < radius * radius) {
+                        session.push([x, y + i, z + j]);
+                    }
+                }
+            }
+            break;
+        case "y":
+            for (let i = -radius; i <= radius; i++) {
+                for (let j = -radius; j <= radius; j++) {
+                    if (i * i + j * j < radius * radius) {
+                        session.push([x + i, y, z + j]);
+                    }
+                }
+            }
+            break;
+        case "z":
+            for (let i = -radius; i <= radius; i++) {
+                for (let j = -radius; j <= radius; j++) {
+                    if (i * i + j * j < radius * radius) {
+                        session.push([x + i, y + j, z]);
+                    }
+                }
+            }
+            break;
+        default:
+            break;
+    }
+    return session;
+});
+methods.set('circle',(x, y, z, input) => {
+    let {direction, radius} = input;
+    let session = [];
+    switch (direction) {
+        case "x":
+            for (let i = -radius; i <= radius; i++) {
+                for (let j = -radius; j <= radius; j++) {
+                    if (i * i + j * j < radius * radius && i * i + j * j >= (radius - 1) * (radius - 1)) {
+                        session.push([x, y + i, z + j]);
+                    }
+                }
+            }
+            break;
+        case "y":
+            for (let i = -radius; i <= radius; i++) {
+                for (let j = -radius; j <= radius; j++) {
+                    if (i * i + j * j < radius * radius && i * i + j * j >= (radius - 1) * (radius - 1)) {
+                        session.push([x + i, y, z + j]);
+                    }
+                }
+            }
+            break;
+        case "z":
+            for (let i = -radius; i <= radius; i++) {
+                for (let j = -radius; j <= radius; j++) {
+                    if (i * i + j * j < radius * radius && i * i + j * j >= (radius - 1) * (radius - 1)) {
+                        session.push([x + i, y + j, z]);
+                    }
+                }
+            }
+            break;
+        default:
+            break;
+    }
+    return session;
+});
+methods.set('sphere',(x, y, z, input) => {
+    let {shape, radius} = input;
+    let session = [];
+    switch (shape) {
+        case "hollow":
+            for (let i = -radius; i <= radius; i++) {
+                for (let j = -radius; j <= radius; j++) {
+                    for (let k = -radius; k <= radius; k++) {
+                        if (i * i + j * j + k * k <= radius * radius && i * i + j * j + k * k >= (radius - 1) * (radius - 1)) {
+                            session.push([x + i, y + j, z + k]);
+                        }
+                    }
+                }
+            }
+            break;
+        case "solid":
+            for (let i = -radius; i <= radius; i++) {
+                for (let j = -radius; j <= radius; j++) {
+                    for (let k = -radius; k <= radius; k++) {
+                        if (i * i + j * j + k * k <= radius * radius) {
+                            session.push([x + i, y + j, z + k]);
+                        }
+                    }
+                }
+            }
+            break;
+        default:
+            break;
+    }
+    return session;
+});
+methods.set('ellipse',(x, y, z, input) => {
+    let {length, width} = input;
+    let session = [];
+    switch (direction) {
+        case "x":
+            for (let i = -length; i <= length; i++) {
+                for (let j = -width; j <= width; j++) {
+                    if ((i * i) / (length * length) + (j * j) / (width * width) < 1) {
+                        session.push([x, y + i, j + z]);
+                    }
+                }
+            }
+            break;
+        case "y":
+            for (let i = -length; i <= length; i++) {
+                for (let j = -width; j <= width; j++) {
+                    if ((i * i) / (length * length) + (j * j) / (width * width) < 1) {
+                        session.push([x + i, y, j + z]);
+                    }
+                }
+            }
+            break;
+        case "z":
+            for (let i = -length; i <= length; i++) {
+                for (let j = -width; j <= width; j++) {
+                    if ((i * i) / (length * length) + (j * j) / (width * width) < 1) {
+                        session.push([x + i, y + z, j]);
+                    }
+                }
+            }
+            break;
+        default:
+            break;
+    }
+    return session;
+});
+methods.set('ellipsoid',(x, y, z, input) => {
+    let {length, height, width} = input;
+    let session = [];
+    for (let i = -length; i <= length; i++) {
+        for (let j = -width; j <= width; j++) {
+            for (let k = -height; k <= height; k++) {
+                if ((i * i) / (length * length) + (j * j) / (width * width) + (k * k) / (height * height) <= 1) {
+                    session.push([x + i, y + j, z + k]);
+                }
+            }
+        }
+    }
+    return session;
+});
+methods.set('torus',(x, y, z, input) => {
+    let {accuracy, radius, length} = input;
+    let session = [];
+    accuracy = 1 / accuracy;
+    let max = Math.PI * 2;
+    switch (direction) {
+        case "x":
+            for (let v = 0; v < max; v = v + accuracy) {
+                for (let u = 0; u < max; u = u + accuracy) {
+                    session.push([Math.round(Math.cos(u) * (length * Math.cos(v) + radius)) + x, Math.round(Math.sin(u) * (length * Math.cos(v) + radius)) + y, Math.round(length * Math.sin(v)) + z]);
+                }
+            }
+            break;
+
+        case "y":
+            for (let v = 0; v < max; v = v + accuracy) {
+                for (let u = 0; u < max; u = u + accuracy) {
+                    session.push([Math.round(Math.cos(u) * (length * Math.cos(v) + radius)) + x, Math.round(length * Math.sin(v)) + y, Math.round(Math.sin(u) * (length * Math.cos(v) + radius)) + z]);
+                }
+            }
+            break;
+        case "z":
+            for (let v = 0; v < max; v = v + accuracy) {
+                for (let u = 0; u < max; u = u + accuracy) {
+                    session.push([Math.round(length * Math.sin(v)) + x, Math.round(Math.cos(u) * (length * Math.cos(v) + radius)) + y, Math.round(Math.sin(u) * (length * Math.cos(v) + radius)) + z]);
+                }
+            }
+            break;
+        default:
+            break;
+    }
+    return multiDimensionalUnique(session);
+});
+methods.set('cone',(x, y, z, input) => {
+    let {height, accuracy, radius} = input;
+    let session = [];
+    let max = Math.PI * 2;
+    accuracy = 1 / accuracy;
+    switch (direction) {
+        case "z":
+            for (let u = 0; u < height; u++) {
+                for (let i = 0; i < max; i = i + accuracy) {
+                    session.push([Math.floor(((height - u) / height) * radius * Math.cos(i)) + x, Math.floor(((height - u) / height) * radius * Math.sin(i)) + y, u + z]);
+                }
+            }
+            break;
+        case "y":
+            for (let u = 0; u < height; u++) {
+                for (let i = 0; i < max; i = i + accuracy) {
+                    session.push([Math.floor(((height - u) / height) * radius * Math.cos(i)) + x, u + y, Math.floor(((height - u) / height) * radius * Math.sin(i)) + z]);
+                }
+            }
+            break;
+        case "x":
+            for (let u = 0; u < height; u++) {
+                for (let i = 0; i < max; i = i + accuracy) {
+                    session.push([u + x, Math.floor(((height - u) / height) * radius * Math.cos(i)) + y, Math.floor(((height - u) / height) * radius * Math.sin(i)) + z]);
+                }
+            }
+            break;
+        default:
+            break;
+    }
+
+    return multiDimensionalUnique(session);
+});
+methods.set('ellipticTorus',(x, y, z, input) => {
+    let {radius, accuracy, length, width, direction} = input;
+    let session = [];
+    accuracy = 1 / accuracy;
+    let max = Math.PI * 2;
+    switch(direction) {
+        case 'z':
+            for(let v = 0 ; v < max ; v = v + accuracy){
+                for(let u = 0 ; u < max ; u = u + accuracy){
+                    session.push([x + Math.round((radius + (length * Math.cos(v))) * Math.cos(u)), y + Math.round((radius + (length * Math.cos(v))) * Math.sin(u)), z + Math.round(width * Math.sin(v))]);
+                }
+            }
+            break;
+        case 'y':
+            for(let v = 0 ; v < max ; v = v + accuracy){
+                for(let u = 0 ; u < max ; u = u + accuracy){
+                    session.push([x + Math.round((radius + (length * Math.cos(v))) * Math.cos(u)), y + Math.round(width * Math.sin(v)), z + Math.round((radius + (length * Math.cos(v))) * Math.sin(u))]);
+                }
+            }
+            break;
+        case 'x':
+            for(let v = 0 ; v < max ; v = v + accuracy){
+                for(let u = 0 ; u < max ; u = u + accuracy){
+                    session.push([x + Math.round(width * Math.sin(v)), y + Math.round((radius + (length * Math.cos(v))) * Math.sin(u)), z + Math.round((radius + (length * Math.cos(v))) * Math.cos(u))]);
+                }
+            }
+            break;
+        default:
+            break;
+    }
+});
+methods.set('ligature',(PosArray1, PosArray2) => {
+    let session = new Array();
+    let[i, j, k] = PosArray1;
+    let[x2, y2, z2] = PosArray2;
+    let line = Math.max(Math.abs(i - x2), Math.abs(j - y2), Math.abs(k - z2)) * 1;
+    for (let i = 0; i <= line; i++) {
+        session.push([Math.round(i + i / line * (x2 - i)), Math.round(j + i / line * (y2 - j)), Math.round(k + i / line * (z2 - k))]);
+    }
+    return session;
+});
+methods.set('pumpkins',(pX, pY, pZ, input) => {
+    let {radius} = input;
+    let session = [];
+    function createPumpkins(x, y, z) {
+        switch(Math.floor(Math.random() * 3) + 1) {
+            case 1:
+                session.push([x, y, z, 'pumpkin', 0]);
+                session.push([x + 2, y, z, 'pumpkin', 0]);
+                session.push([x - 2, y, z - 1, 'pumpkin', 0]);
+                session.push([x + 3, y, z + 2, 'pumpkin', 0]);
+                session.push([x - 2, y, z + 3, 'pumpkin', 0]);
+                session.push([x, y, z - 3, 'pumpkin', 0]);
+                session.push([x, y, z + 2, 'pumpkin', 0]);
+                session.push([x + 1, y, z - 1, 'leaves', 0]);
+                session.push([x - 2, y, z + 1, 'leaves', 0]);
+                session.push([x + 1, y, z + 1, 'leaves', 0]);
+                session.push([x, y, z - 2, 'leaves', 0]);
+                break;
+
+            case 2:
+                session.push([x + 3, y, z, 'pumpkin', 0]);
+                session.push([x + 2, y, z, 'pumpkin', 0]);
+                session.push([x - 1, y, z - 1, 'pumpkin', 0]);
+                session.push([x + 3, y, z + 2, 'pumpkin', 0]);
+                session.push([x - 4, y, z + 2, 'pumpkin', 0]);
+                session.push([x + 1, y, z - 2, 'pumpkin', 0]);
+                session.push([x + 1, y, z - 3, 'leaves', 0]);
+                session.push([x - 2, y, z + 1, 'leaves', 0]);
+                session.push([x + 1, y, z + 1, 'leaves', 0]);
+                session.push([x + 1, y, z - 2, 'leaves', 0]);
+                break;
+
+            case 3:
+                session.push([x, y, z + 1, 'pumpkin', 0]);
+                session.push([x + 2, y, z, 'pumpkin', 0]);
+                session.push([x + 2, y, z - 1, 'pumpkin', 0]);
+                session.push([x + 3, y, z + 4, 'pumpkin', 0]);
+                session.push([x - 1, y, z + 3, 'pumpkin', 0]);
+                session.push([x + 1, y, z - 2, 'pumpkin', 0]);
+                session.push([x + 1, y, z - 1, 'leaves', 0]);
+                session.push([x - 2, y, z + 1, 'leaves', 0]);
+                session.push([x + 1, y, z, 'leaves', 0]);
+                session.push([x, y, z - 3, 'leaves', 0]);
+                break;
+        };
+    }
+    for(let x = -radius; x <= radius; x++) {
+        for(let y = -radius; y <= radius; y++) {
+            for(let z = -radius; z <= radius; z++) {
+                if(Math.floor(Math.random() * 200) + 1 == 1) {
+                    createPumpkins(pX + x, pY + y, pZ + z);
+                }
+            }
+        }
+    }
+    return session;
+});
+methods.set('forestgen',(pX, pY, pZ, input) => {
+    let {radius, shape, density} = input;
+    let session = [];
+    function Birch(x, y, z) {
+        let session = [];
+        let height = Math.floor(Math.random() * 4) + 2;
+        for(let a = -2; a < 3; a++) {
+            for(let b = 1; b < 3; b++) {
+                for(let c = -2; c < 3; c++) {
+                    session.push([x + a, y + b + height, z + c, 'leaves', 2]);
+                }
+            }
+        }
+
+        for(let d = 0; d <= height + 2; d++) {
+            session.push([x, y + d + 1, z, 'log', 2]);
+        }
+
+        session.push([x + 1, y + height + 3, z, 'leaves', 2]);
+        session.push([x - 1, y + height + 3, z, 'leaves', 2]);
+        session.push([x, y + height + 3, z + 1, 'leaves', 2]);
+        session.push([x, y + height + 3, z - 1, 'leaves', 2]);
+        session.push([x, y + height + 4, z, 'leaves', 2]);
+        session.push([x + 1, y + height + 4, z, 'leaves', 2]);
+        session.push([x - 1, y + height + 4, z, 'leaves', 2]);
+        session.push([x, y + height + 4, z + 1, 'leaves', 2]);
+        session.push([x, y + height + 4, z - 1, 'leaves', 2]);
+    };
+    function Oak(x, y, z) {
+        let height = Math.floor(Math.random() * 3) + 1;
+        for(let a = -2; a < 3; a++) {
+            for(let b = 1; b < 3; b++) {
+                for(let c = -2; c < 3; c++) {
+                    session.push([x + a, y + b + height, z + c, 'leaves', 0]);
+                }
+            }
+        }
+
+        for(let d = 0; d <= height + 2; d++) {
+            session.push([x, y + d + 1, z, 'log', 0]);
+        }
+
+        session.push([x + 1, y + height + 3, z, 'leaves', 0]);
+        session.push([x - 1, y + height + 3, z, 'leaves', 0]);
+        session.push([x, y + height + 3, z + 1, 'leaves', 0]);
+        session.push([x, y + height + 3, z - 1, 'leaves', 0]);
+        session.push([x, y + height + 4, z, 'leaves', 0]);
+        session.push([x + 1, y + height + 4, z, 'leaves', 0]);
+        session.push([x - 1, y + height + 4, z, 'leaves', 0]);
+        session.push([x, y + height + 4, z + 1, 'leaves', 0]);
+        session.push([x, y + height + 4, z - 1, 'leaves', 0]);
+    };
+    function Spruce(x, y, z) {
+        let height = 4;
+        for(let a = -2; a < 3; a++) {
+            for(let b = 0; b < 1; b++) {
+                for(let c = -2; c < 3; c++) {
+                    session.push([x + a, y + b + height + 1, z + c, 'leaves', 1]);
+                    session.push([x + 2, y + b + height + 1, z + 2, 'air', 0]);
+                    session.push([x - 2, y + b + height + 1, z - 2, 'air', 0]);
+                    session.push([x + 2, y + b + height + 1, z - 2, 'air', 0]);
+                    session.push([x - 2, y + b + height + 1, z + 2, 'air', 0]);
+                }
+            }
+        }
+
+        for(let a = -2; a < 3; a++) {
+            for(let b = 'air'; b < 1; b++) {
+                for(let c = -2; c < 3; c++) {
+                    session.push([x + a, y + b + height - 1, z + c, 'leaves', 1]);
+                    session.push([x + 2, y + b + height - 1, z + 2, 'air', 0]);
+                    session.push([x - 2, y + b + height - 1, z - 2, 'air', 0]);
+                    session.push([x + 2, y + b + height - 1, z - 2, 'air', 0]);
+                    session.push([x - 2, y + b + height - 1, z + 2, 'air', 0]);
+                }
+            }
+        }
+
+        for(let a = -3; a < 4; a++) {
+            for(let b = 0; b < 1; b++) {
+                for(let c = -3; c < 4; c++) {
+                    session.push([x + a, y + b + height - 2, z + c, 'leaves', 1]);
+                    session.push([x + 3, y + b + height - 2, z + 3, 'air', 0]);
+                    session.push([x - 3, y + b + height - 2, z - 3, 'air', 0]);
+                    session.push([x + 3, y + b + height - 2, z - 3, 'air', 0]);
+                    session.push([x - 3, y + b + height - 2, z + 3, 'air', 0]);
+                    session.push([x + 3, y + b + height - 2, z + 2, 'air', 0]);
+                    session.push([x + 3, y + b + height - 2, z - 2, 'air', 0]);
+                    session.push([x - 3, y + b + height - 2, z + 2, 'air', 0]);
+                    session.push([x - 3, y + b + height - 2, z - 2, 'air', 0]);
+                    session.push([x + 2, y + b + height - 2, z + 3, 'air', 0]);
+                    session.push([x - 2, y + b + height - 2, z + 3, 'air', 0]);
+                    session.push([x + 2, y + b + height - 2, z - 3, 'air', 0]);
+                    session.push([x - 2, y + b + height - 2, z - 3, 'air', 0]);
+                }
+            }
+        }
+
+        for(let d = 0; d <= height + 2; d++) {
+            session.push([x, y + d + 1, z, 17, 1]);
+        }
+
+        session.push([x + 1, y + height, z, 'leaves', 1]);
+        session.push([x - 1, y + height, z, 'leaves', 1]);
+        session.push([x, y + height, z + 1, 'leaves', 1]);
+        session.push([x, y + height, z - 1, 'leaves', 1]);
+        session.push([x + 1, y + height + 2, z, 'leaves', 1]);
+        session.push([x - 1, y + height + 2, z, 'leaves', 1]);
+        session.push([x, y + height + 2, z + 1, 'leaves', 1]);
+        session.push([x, y + height + 2, z - 1, 'leaves', 1]);
+        session.push([x, y + height + 3, z, 'leaves', 1]);
+        session.push([x + 1, y + height + 4, z, 'leaves', 1]);
+        session.push([x - 1, y + height + 4, z, 'leaves', 1]);
+        session.push([x, y + height + 4, z + 1, 'leaves', 1]);
+        session.push([x, y + height + 4, z - 1, 'leaves', 1]);
+        session.push([x, y + height + 4, z, 'leaves', 1]);
+    };
+    function Jungle(x, y, z) {
+        let height = Math.floor(Math.random() * 6) + 2;
+
+        for(let a = -2; a < 3; a++) {
+            for(let b = 1; b < 3; b++) {
+                for(let c = -2; c < 3; c++) {
+                    if(isTile(x + a, y + b + height, z + c, 'air')) {
+                        session.push([x + a, y + b + height, z + c, 'leaves', 3]);
+                    }
+                }
+            }
+        }
+
+        for(let d = 0; d <= height + 2; d++) {
+            session.push([x, y + d + 1, z, 17, 3]);
+
+            switch(Math.floor(Math.random() * 10) + 1) {
+                case 1:
+                    for(let e = 0; e <= height + 2; e++) {
+                        if(isTile(x + 1, y + e, z, 'air')) {
+                            session.push([x + 1, y + e, z, 'vine', 2]);
+                        }
+                    }
+                    break;
+
+                case 2:
+                    for(let e = 0; e <= height + 2; e++) {
+                        if(isTile(x - 1, y + e, z, 'air')) {
+                            session.push([x - 1, y + e, z, 'vine', 8]);
+                        }
+                    }
+                    break;
+
+                case 3:
+                    for(let e = 0; e <= height + 2; e++) {
+                        if(isTile(x, y + e, z + 1, 'air')) {
+                            session.push([x, y + e, z + 1, 'vine', 4]);
+                        }
+                    }
+                    break;
+
+                case 4:
+                    for(let e = 0; e <= height + 2; e++) {
+                        if(isTile(x, y + e, z - 1, 'air')) {
+                            session.push([x, y + e, z - 1, 'vine', 1]);
+                        }
+                    }
+                    break;
+            }
+        }
+
+        session.push([x + 1, y + height + 3, z, 'leaves', 3]);
+        session.push([x - 1, y + height + 3, z, 'leaves', 3]);
+        session.push([x, y + height + 3, z + 1, 'leaves', 3]);
+        session.push([x, y + height + 3, z - 1, 'leaves', 3]);
+        session.push([x, y + height + 4, z, 'leaves', 3]);
+        session.push([x + 1, y + height + 4, z, 'leaves', 3]);
+        session.push([x - 1, y + height + 4, z, 'leaves', 3]);
+        session.push([x, y + height + 4, z + 1, 'leaves', 3]);
+        session.push([x, y + height + 4, z - 1, 'leaves', 3]);
+    };
+    for(let x = -radius; x <= radius; x++) {
+        for(let y = -radius; y <= radius; y++) {
+            for(let z = -radius; z <= radius; z++) {
+                if(Math.floor(Math.random() * 400) + 0 <= density) {
+                    switch(shape) {
+                        case "oak":
+                            Oak(pX + x, pY + y - 1, pZ + z);
+                            break;
+
+                        case "birch":
+                            Birch(pX + x, pY + y - 1, pZ + z);
+                            break;
+
+                        case "spruce":
+                            if(Math.floor(Math.random() * 10) + 1 == 1) {
+                                Spruce(pX + x, pY + y - 1, pZ + z);
+                            }
+                            break;
+
+                        case "jungle":
+                            Jungle(pX + x, pY + y - 1, pZ + z);
+                            break;
+                    }
+                }
+
+            }
+        }
+    }
+    return session;
+});
+class Algorithms {
+    static Builder (header, build) {
+        let [x,y,z] = header.position;
+        return {
+            map:methods.get(build.type)(x,y,z,build),
+            foo:this.getFoo(build),
+            other:build.height
+        }
+    }
+
+    static WhileBuilder(input, build){
+        let sessions = [];
+        for (let i = 0 ; i < input.length ; i++){
+            sessions.push(methods.get(build.type)(x,y,z,build));
+        }
+        return {
+            map:sessions,
+            foo:this.getFoo(build),
+            other:build.height
+        }
+    }
+
+    static getFoo(build){
+        let setTile = ['sphere','ellipsoid','torus','cone','ellipticTorus'];
+        let setLongTile = ['round','circle','ellipse'];
+        if(build.entityMod){
+            if(!!~setTile.indexOf(build.type)){
+                return 'setEntity';
+            }else if(!!~setLongTile.indexOf(build.type)){
+                return 'setLongEntity';
+            };
+        }else{
+            if(!!~setTile.indexOf(build.type)){
+                return 'setTile';
+            }else if(!!~setLongTile.indexOf(build.type)){
+                return 'setLongTile';
+            };
+        }
+        return 'Unknown!';
+    }
+}
+
+console.log(Algorithms.Builder({
+    position:[0,0,0]
+},{
+    type:'forestgen',
+    direction:'y',
+    radius:5,
+    length:5,
+    density:10,
+    width:5,
+    shape:'oak',
+    height:1,
+    accuracy:50,
+}));
+//module.exports = Algorithms;
+
+
