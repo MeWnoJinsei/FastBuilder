@@ -592,6 +592,6 @@ console.log(Algorithms.Builder({
     height:1,
     accuracy:50,
 }));
-//module.exports = Algorithms;
+module.exports = Algorithms;
 
 
