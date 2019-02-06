@@ -79,7 +79,6 @@ function onConn(socket, req) {
 function onMessage(message) {
     let json = JSON.parse(message);
     let header = json.header;
-    let body = json.body;
     switch (header.messagePurpose) {
         case 'event':
             let listeners = this.eventListeners.get(json.body.eventName);
@@ -115,7 +114,6 @@ function onMessage(message) {
 function onClose() {
     this.server.sessions.delete(this);
 }
-
 
 const UUIDGeneratorNode = () =>
   ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>

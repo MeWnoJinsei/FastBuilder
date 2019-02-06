@@ -1,9 +1,3 @@
 /node_modules
 package-lock.json
-./OldCore
-./css
-client.html
-index.html
-OldIndex.js
-
-
+.idea

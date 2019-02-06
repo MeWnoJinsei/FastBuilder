@@ -2,11 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1311408-cb91-4c6c-8a74-b9dd296ec510" name="Default Changelist" comment="Merge branch 'master' of https://github.com/CAIMEOX/FastBuilder&#10;&#10;# Conflicts:&#10;#&#9;Algorithms.js&#10;#&#9;FastBuilder.md&#10;#&#9;fastbuilder.js">
-      <change afterPath="$PROJECT_DIR$/core/newAlgorithms.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/script/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/algorithms.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/algorithms.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/argv.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/argv.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/session.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/session.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/wsserver.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/wsserver.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/colortables.js" beforeDir="false" afterPath="$PROJECT_DIR$/script/paint/colortables.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/paint.js" beforeDir="false" afterPath="$PROJECT_DIR$/script/paint/paint.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,41 +23,36 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="FastBuilder" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/session.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="286" selection-start-line="286" selection-end-line="286" />
+            <state relative-caret-position="800">
+              <caret line="167" column="18" lean-forward="true" selection-start-line="167" selection-start-column="18" selection-end-line="167" selection-end-column="18" />
               <folding>
-                <element signature="n#!!block;n#createAndBind#0;n#BuildSession#0" />
-                <element signature="n#!!block;n#onChatMessage#0;n#BuildSession#0" />
+                <element signature="n#!!block;n#init#0;n#BuildSession#0" />
                 <element signature="n#!!block;n#sendText#0;n#BuildSession#0" />
                 <element signature="n#!!block;n#showhelp#0;n#BuildSession#0" />
-                <element signature="n#!!block;n#doit#0;n#BuildSession#0" />
                 <element signature="n#!!block;n#getValue#0;n#BuildSession#0" />
                 <element signature="n#!!block;n#Paint#0;n#BuildSession#0" />
                 <element signature="n#!!block;n#draw#0;n#BuildSession#0" />
                 <element signature="n#!!block;n#setTile#0;n#BuildSession#0" />
+                <element signature="n#!!block;n#isTile#0;n#BuildSession#0" />
+                <element signature="n#!!block;n#setblock#0;n#BuildSession#0" />
                 <element signature="n#!!block;n#setLongTile#0;n#BuildSession#0" />
                 <element signature="n#!!block;n#fillTile#0;n#BuildSession#0" />
                 <element signature="n#!!block;n#setEntity#0;n#BuildSession#0" />
                 <element signature="n#!!block;n#setLongEntity#0;n#BuildSession#0" />
                 <element signature="n#!!block;n#$header#0" />
+                <element signature="n#!!block;n#toArray#0" />
+                <element signature="n#!!block;n#now#0" />
+                <element signature="n#!!block;n#getMin#0" />
+                <element signature="n#!!block;n#get_color#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="1969">
-                <caret line="132" column="25" selection-start-line="132" selection-start-column="25" selection-end-line="132" selection-end-column="25" />
-              </first_editor>
-              <second_editor />
             </state>
           </provider>
         </entry>
@@ -59,27 +60,38 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/argv.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-288">
-              <caret line="16" column="105" selection-start-line="16" selection-start-column="105" selection-end-line="16" selection-end-column="105" />
+            <state relative-caret-position="374">
+              <caret line="91" column="29" lean-forward="true" selection-start-line="91" selection-start-column="29" selection-end-line="91" selection-end-column="29" />
               <folding>
-                <element signature="n#!!block;n#toArr#0" />
-                <element signature="n#!!block;n#hasFlags#0" />
+                <element signature="e#129#326#0" />
+                <element signature="e#352#908#0" />
+                <element signature="e#926#1144#0" />
+                <element signature="e#1161#1592#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/wsserver.js">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/core/algorithms.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
-              <caret line="78" column="28" lean-forward="true" selection-start-line="78" selection-start-column="28" selection-end-line="78" selection-end-column="28" />
+            <state relative-caret-position="-400">
+              <caret line="250" column="43" selection-start-line="250" selection-start-column="43" selection-end-line="250" selection-end-column="43" />
               <folding>
-                <element signature="n#!!block;n#constructor#0;n#Session#0" />
-                <element signature="n#!!block;n#subscribe#0;n#Session#0" />
-                <element signature="n#!!block;n#unsubscribe#0;n#Session#0" />
-                <element signature="n#!!block;n#sendCommand#0;n#Session#0" />
-                <element signature="n#!!block;n#onConn#0" />
+                <element signature="e#75#1461#0" />
+                <element signature="e#1513#3043#0" />
+                <element signature="e#3095#4397#0" />
+                <element signature="e#4450#5921#0" />
+                <element signature="e#5976#6533#0" />
+                <element signature="e#6584#8230#0" />
+                <element signature="e#8280#9809#0" />
+                <element signature="e#11547#11998#0" />
+                <element signature="e#12055#15008#0" />
+                <element signature="e#15184#16338#0" />
+                <element signature="e#17567#21403#0" />
+                <element signature="e#18066#19945#0" />
+                <element signature="e#20985#20993#0" />
+                <element signature="n#!!block;n#WhileBuilder#0;n#Algorithms#0" />
               </folding>
             </state>
           </provider>
@@ -88,32 +100,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+            <state relative-caret-position="204">
+              <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core/algorithms.js">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/wsserver.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1321">
-              <caret line="507" column="62" selection-start-line="507" selection-start-column="62" selection-end-line="507" selection-end-column="62" />
+            <state relative-caret-position="500">
+              <caret line="75" column="9" selection-start-line="75" selection-start-column="9" selection-end-line="75" selection-end-column="9" />
               <folding>
-                <element signature="n#!!block;n#multiDimensionalUnique#0" />
-                <element signature="e#60#1129#0" />
-                <element signature="e#1166#2379#0" />
-                <element signature="e#2416#3445#0" />
-                <element signature="e#3483#4630#0" />
-                <element signature="e#4670#5062#0" />
-                <element signature="e#5098#6426#0" />
-                <element signature="e#6461#7702#0" />
-                <element signature="e#7746#9037#0" />
-                <element signature="e#9089#9468#0" />
-                <element signature="e#19741#20115#0" />
-                <element signature="e#13368#13434#0" />
-                <element signature="n#Algorithms#0" />
-                <element signature="n#!!block;n#getFoo#0;n#Algorithms#0" />
+                <element signature="n#Session#0" />
+                <element signature="n#!!block;n#subscribe#0;n#Session#0" />
+                <element signature="n#!!block;n#unsubscribe#0;n#Session#0" />
+                <element signature="n#!!block;n#sendCommand#0;n#Session#0" />
+                <element signature="n#!!block;n#onClose#0" />
+                <element signature="n#!!block;n#buildHeader#0" />
               </folding>
             </state>
           </provider>
@@ -148,6 +152,7 @@
       <find>direction</find>
       <find>0)</find>
       <find>Radius</find>
+      <find>isTile</find>
     </findStrings>
     <replaceStrings>
       <replace>helps</replace>
@@ -200,21 +205,24 @@
         <option value="$PROJECT_DIR$/core/TestReader.js" />
         <option value="$PROJECT_DIR$/core/Reader.js" />
         <option value="$PROJECT_DIR$/core/main-test.js" />
-        <option value="$PROJECT_DIR$/Main.js" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/core/wsserver.js" />
-        <option value="$PROJECT_DIR$/core/argv.js" />
         <option value="$PROJECT_DIR$/core/newAlgorithms.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/core/wsserver.js" />
+        <option value="$PROJECT_DIR$/script/main.js" />
+        <option value="$PROJECT_DIR$/script/paint/paint.js" />
+        <option value="$PROJECT_DIR$/Main.js" />
+        <option value="$PROJECT_DIR$/core/argv.js" />
         <option value="$PROJECT_DIR$/core/session.js" />
         <option value="$PROJECT_DIR$/core/algorithms.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="95" />
-    <option name="y" value="24" />
-    <option name="width" value="950" />
-    <option name="height" value="1052" />
+    <option name="x" value="659" />
+    <option name="y" value="31" />
+    <option name="width" value="940" />
+    <option name="height" value="786" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -233,12 +241,13 @@
             <path>
               <item name="FastBuilder" type="b2602c69:ProjectViewProjectNode" />
               <item name="FastBuilder" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="script" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="FastBuilder" type="b2602c69:ProjectViewProjectNode" />
               <item name="FastBuilder" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="script" type="462c0819:PsiDirectoryNode" />
+              <item name="paint" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -252,10 +261,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.JavaScript" />
+    <property name="settings.editor.selected.configurable" value="copyright.filetypes.JavaScript" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/script/paint" />
       <recent name="$PROJECT_DIR$/core" />
     </key>
   </component>
@@ -271,29 +281,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.algorithms.js">
+  <component name="RunManager" selected="Node.js.Main.js">
     <configuration name="Main.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Main.js" working-dir="$PROJECT_DIR$">
-      <method v="2" />
-    </configuration>
-    <configuration name="Reader.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/core/Reader.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <configuration name="algorithms.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/core/algorithms.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
-    <configuration name="main.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/node_modules/main.js" working-dir="$PROJECT_DIR$">
+    <configuration name="argv.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/core/argv.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <configuration name="newAlgorithms.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/core/newAlgorithms.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
+    <configuration name="session.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/core/session.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Node.js.algorithms.js" />
-        <item itemvalue="Node.js.newAlgorithms.js" />
         <item itemvalue="Node.js.Main.js" />
-        <item itemvalue="Node.js.Reader.js" />
-        <item itemvalue="Node.js.main.js" />
+        <item itemvalue="Node.js.algorithms.js" />
+        <item itemvalue="Node.js.argv.js" />
+        <item itemvalue="Node.js.session.js" />
+        <item itemvalue="Node.js.newAlgorithms.js" />
       </list>
     </recent_temporary>
   </component>
@@ -347,12 +357,17 @@
       <workItem from="1549201445035" duration="1414000" />
       <workItem from="1549245831038" duration="4340000" />
       <workItem from="1549280991201" duration="996000" />
-      <workItem from="1549283096237" duration="9004000" />
+      <workItem from="1549283096237" duration="9116000" />
+      <workItem from="1549342363188" duration="1430000" />
+      <workItem from="1549346490995" duration="750000" />
+      <workItem from="1549347271893" duration="7662000" />
+      <workItem from="1549371109493" duration="4516000" />
+      <workItem from="1549428993854" duration="7165000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155026000" />
+    <option name="totallyTimeSpent" value="176661000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -367,21 +382,21 @@
     <frame x="0" y="31" width="1920" height="1049" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48876405" visible="true" weight="0.13255568" />
-      <window_info id="Structure" order="1" sideWeight="0.51123595" side_tool="true" weight="0.1329114" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48333332" visible="true" weight="0.13255568" />
+      <window_info id="Structure" order="1" sideWeight="0.51666665" side_tool="true" visible="true" weight="0.13255568" />
+      <window_info id="Favorites" order="2" sideWeight="0.5145631" side_tool="true" weight="0.13255568" />
       <window_info id="npm" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32903227" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29357797" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.24311927" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32903227" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32798165" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32798165" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.16513762" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.07110092" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -503,48 +518,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/argv.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-288">
-          <caret line="16" column="105" selection-start-line="16" selection-start-column="105" selection-end-line="16" selection-end-column="105" />
-          <folding>
-            <element signature="n#!!block;n#toArr#0" />
-            <element signature="n#!!block;n#hasFlags#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="1969">
-            <caret line="132" column="25" selection-start-line="132" selection-start-column="25" selection-end-line="132" selection-end-column="25" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/wsserver.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="78" column="28" lean-forward="true" selection-start-line="78" selection-start-column="28" selection-end-line="78" selection-end-column="28" />
-          <folding>
-            <element signature="n#!!block;n#constructor#0;n#Session#0" />
-            <element signature="n#!!block;n#subscribe#0;n#Session#0" />
-            <element signature="n#!!block;n#unsubscribe#0;n#Session#0" />
-            <element signature="n#!!block;n#sendCommand#0;n#Session#0" />
-            <element signature="n#!!block;n#onConn#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/newAlgorithms.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -563,48 +536,123 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="238">
+            <caret line="132" column="25" selection-start-line="132" selection-start-column="25" selection-end-line="132" selection-end-column="25" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/paint/paint.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+          <folding>
+            <element signature="n#!!block;n#getMin#0" />
+            <element signature="n#!!block;n#get_color#0" />
+            <element signature="n#!!block;n#Paint#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/wsserver.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="75" column="9" selection-start-line="75" selection-start-column="9" selection-end-line="75" selection-end-column="9" />
+          <folding>
+            <element signature="n#Session#0" />
+            <element signature="n#!!block;n#subscribe#0;n#Session#0" />
+            <element signature="n#!!block;n#unsubscribe#0;n#Session#0" />
+            <element signature="n#!!block;n#sendCommand#0;n#Session#0" />
+            <element signature="n#!!block;n#onClose#0" />
+            <element signature="n#!!block;n#buildHeader#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/argv.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="91" column="29" lean-forward="true" selection-start-line="91" selection-start-column="29" selection-end-line="91" selection-end-column="29" />
+          <folding>
+            <element signature="e#129#326#0" />
+            <element signature="e#352#908#0" />
+            <element signature="e#926#1144#0" />
+            <element signature="e#1161#1592#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/core/session.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="286" selection-start-line="286" selection-end-line="286" />
+        <state relative-caret-position="800">
+          <caret line="167" column="18" lean-forward="true" selection-start-line="167" selection-start-column="18" selection-end-line="167" selection-end-column="18" />
           <folding>
-            <element signature="n#!!block;n#createAndBind#0;n#BuildSession#0" />
-            <element signature="n#!!block;n#onChatMessage#0;n#BuildSession#0" />
+            <element signature="n#!!block;n#init#0;n#BuildSession#0" />
             <element signature="n#!!block;n#sendText#0;n#BuildSession#0" />
             <element signature="n#!!block;n#showhelp#0;n#BuildSession#0" />
-            <element signature="n#!!block;n#doit#0;n#BuildSession#0" />
             <element signature="n#!!block;n#getValue#0;n#BuildSession#0" />
             <element signature="n#!!block;n#Paint#0;n#BuildSession#0" />
             <element signature="n#!!block;n#draw#0;n#BuildSession#0" />
             <element signature="n#!!block;n#setTile#0;n#BuildSession#0" />
+            <element signature="n#!!block;n#isTile#0;n#BuildSession#0" />
+            <element signature="n#!!block;n#setblock#0;n#BuildSession#0" />
             <element signature="n#!!block;n#setLongTile#0;n#BuildSession#0" />
             <element signature="n#!!block;n#fillTile#0;n#BuildSession#0" />
             <element signature="n#!!block;n#setEntity#0;n#BuildSession#0" />
             <element signature="n#!!block;n#setLongEntity#0;n#BuildSession#0" />
             <element signature="n#!!block;n#$header#0" />
+            <element signature="n#!!block;n#toArray#0" />
+            <element signature="n#!!block;n#now#0" />
+            <element signature="n#!!block;n#getMin#0" />
+            <element signature="n#!!block;n#get_color#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/algorithms.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1321">
-          <caret line="507" column="62" selection-start-line="507" selection-start-column="62" selection-end-line="507" selection-end-column="62" />
+        <state relative-caret-position="-400">
+          <caret line="250" column="43" selection-start-line="250" selection-start-column="43" selection-end-line="250" selection-end-column="43" />
           <folding>
-            <element signature="n#!!block;n#multiDimensionalUnique#0" />
-            <element signature="e#60#1129#0" />
-            <element signature="e#1166#2379#0" />
-            <element signature="e#2416#3445#0" />
-            <element signature="e#3483#4630#0" />
-            <element signature="e#4670#5062#0" />
-            <element signature="e#5098#6426#0" />
-            <element signature="e#6461#7702#0" />
-            <element signature="e#7746#9037#0" />
-            <element signature="e#9089#9468#0" />
-            <element signature="e#19741#20115#0" />
-            <element signature="e#13368#13434#0" />
-            <element signature="n#Algorithms#0" />
-            <element signature="n#!!block;n#getFoo#0;n#Algorithms#0" />
+            <element signature="e#75#1461#0" />
+            <element signature="e#1513#3043#0" />
+            <element signature="e#3095#4397#0" />
+            <element signature="e#4450#5921#0" />
+            <element signature="e#5976#6533#0" />
+            <element signature="e#6584#8230#0" />
+            <element signature="e#8280#9809#0" />
+            <element signature="e#11547#11998#0" />
+            <element signature="e#12055#15008#0" />
+            <element signature="e#15184#16338#0" />
+            <element signature="e#17567#21403#0" />
+            <element signature="e#18066#19945#0" />
+            <element signature="e#20985#20993#0" />
+            <element signature="n#!!block;n#WhileBuilder#0;n#Algorithms#0" />
           </folding>
         </state>
       </provider>

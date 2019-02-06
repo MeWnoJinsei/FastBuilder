@@ -1,9 +1,8 @@
-const readMessage = require('./argv');
+const Read = require('./argv');
 const Algorithms = require('./algorithms');
 const helps = require('./profile').helps;
-const color = require('../script/colortables');
+const color = require('../script/paint/colortables');
 const get_pixels = require('get-pixels');
-
 let $default = {};
 let $history = {
   players:[],
@@ -36,7 +35,7 @@ class BuildSession {
   }
 
   onChatMessage (msg, player, files){
-    let x = readMessage(msg, $header());
+    let x = Read.read(msg, $default);
     if(x.server.close){
       this.sendText('FastBuilder disconnecting...');
       this.session.sendCommand('closewebsocket');
@@ -86,7 +85,7 @@ class BuildSession {
 
   doit(args, player, msg){
     console.log(args);
-    let {main, header, build, collect, server} = args;
+    let {main, header, build, collect} = args;
     let {position, block, data, method, $block, $data, entity} = header;
     let delays = build.delays;
 
@@ -99,12 +98,20 @@ class BuildSession {
       $default.su = false;
     }
 
+    if(collect.writeData){
+      $header(true, header);
+      this.sendText(now() + 'Data wrote!');
+    }
+
     if(main.isCmd){
 
       this.sendText(($default.su ? 'root' : player) + '@FastBuilder: ' + msg);
       this.showhelp(args.server);
 
-      let {map, foo} = Algorithms.Builder(header,build) || {};
+      //let {map, foo} = Algorithms.builder(header,build) || {};
+      let {
+        map,foo
+      } = Algorithms.builder(header,build[0]);
 
       if(!map){
         return;
@@ -139,7 +146,7 @@ class BuildSession {
             break;
 
           case 'setLongTile':
-            this.setLongTile(header.su, map, build.height, build.direction, block, data, method, delays);
+            this.setLongTile(header.su, map, build[0].height, build[0].direction, block, data, method, delays);
             break;
 
           case 'setEntity':
@@ -150,19 +157,18 @@ class BuildSession {
             this.setLongEntity(header.su, map, build.height, entity, delays);
             break;
 
+          case 'setblock':
+            this.setblock(map, method, delays);
+            break;
+
           case 'paint':
-            this.Paint(build.path, position[0], position[1], position[2]);
+            this.Paint(build[0].path, position[0], position[1], position[2]);
             break;
 
           default:
 		        throw new Error('Unknown function.');
             break;
         }
-    }
-
-    if(collect.writeData){
-      $header(true, header);
-      this.sendText(now() + 'Data wrote!');
     }
 
     if(collect.get){
@@ -284,10 +290,6 @@ class BuildSession {
     }, 10);
   }
 
-
-
-
-
   setTile(root, list, block, data, mod, delays){
     let t = 0;
     let that = this;
@@ -315,8 +317,24 @@ class BuildSession {
     });
   }
 
-  setblock(x, y, z,b, d){
-    this.session.sendCommand(['setblock',x,y,z,b,d].join(' '));
+  setblock(list, mod, delays){
+    let t = 0;
+    let that = this;
+    let interval = setInterval(() => {
+      that.session.sendCommand([
+        'fill',
+        list[t][0],list[t][1],list[t][2],
+        list[t][0],list[t][1],list[t][2],
+        list[t][3],
+        list[t][4],
+        mod
+      ].join(' '));
+      t++;
+      if(t == list.length){
+        that.sendText(now() + 'Structure has been generated!');
+        clearInterval(interval);
+      }
+    }, delays);
   }
 
   setLongTile(root, list, len, direction, block, data, mod, delays){
@@ -409,7 +427,6 @@ class BuildSession {
     }, delays);
   }
 }
-
 function $header(r,opts){
   if(r){
     $default.position = opts.position;

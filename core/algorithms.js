@@ -1,17 +1,4 @@
 const methods = new Map();
-function multiDimensionalUnique(arr) {
-    let uniques = [];
-    let itemsFound = {};
-    for (let i = 0, l = arr.length; i < l; i++) {
-        let stringified = JSON.stringify(arr[i]);
-        if (itemsFound[stringified]) {
-            continue;
-        }
-        uniques.push(arr[i]);
-        itemsFound[stringified] = true;
-    }
-    return uniques;
-}
 methods.set('round',(x, y, z, input) => {
     let {direction, radius} = input;
     let session = [];
@@ -116,7 +103,7 @@ methods.set('sphere',(x, y, z, input) => {
     return session;
 });
 methods.set('ellipse',(x, y, z, input) => {
-    let {length, width} = input;
+    let {direction, length, width} = input;
     let session = [];
     switch (direction) {
         case "x":
@@ -261,6 +248,7 @@ methods.set('ellipticTorus',(x, y, z, input) => {
         default:
             break;
     }
+    return multiDimensionalUnique(session);
 });
 methods.set('ligature',(PosArray1, PosArray2) => {
     let session = new Array();
@@ -333,7 +321,6 @@ methods.set('forestgen',(pX, pY, pZ, input) => {
     let {radius, shape, density} = input;
     let session = [];
     function Birch(x, y, z) {
-        let session = [];
         let height = Math.floor(Math.random() * 4) + 2;
         for(let a = -2; a < 3; a++) {
             for(let b = 1; b < 3; b++) {
@@ -452,9 +439,7 @@ methods.set('forestgen',(pX, pY, pZ, input) => {
         for(let a = -2; a < 3; a++) {
             for(let b = 1; b < 3; b++) {
                 for(let c = -2; c < 3; c++) {
-                    if(isTile(x + a, y + b + height, z + c, 'air')) {
                         session.push([x + a, y + b + height, z + c, 'leaves', 3]);
-                    }
                 }
             }
         }
@@ -465,33 +450,25 @@ methods.set('forestgen',(pX, pY, pZ, input) => {
             switch(Math.floor(Math.random() * 10) + 1) {
                 case 1:
                     for(let e = 0; e <= height + 2; e++) {
-                        if(isTile(x + 1, y + e, z, 'air')) {
                             session.push([x + 1, y + e, z, 'vine', 2]);
-                        }
                     }
                     break;
 
                 case 2:
                     for(let e = 0; e <= height + 2; e++) {
-                        if(isTile(x - 1, y + e, z, 'air')) {
                             session.push([x - 1, y + e, z, 'vine', 8]);
-                        }
                     }
                     break;
 
                 case 3:
                     for(let e = 0; e <= height + 2; e++) {
-                        if(isTile(x, y + e, z + 1, 'air')) {
                             session.push([x, y + e, z + 1, 'vine', 4]);
-                        }
                     }
                     break;
 
                 case 4:
                     for(let e = 0; e <= height + 2; e++) {
-                        if(isTile(x, y + e, z - 1, 'air')) {
                             session.push([x, y + e, z - 1, 'vine', 1]);
-                        }
                     }
                     break;
             }
@@ -531,19 +508,31 @@ methods.set('forestgen',(pX, pY, pZ, input) => {
                             break;
                     }
                 }
-
             }
         }
     }
     return session;
 });
+methods.set('paint',() => {
+    return [0,0,0];
+})
 class Algorithms {
-    static Builder (header, build) {
+    static builder (header, build) {
+        let r = new Algorithms();
         let [x,y,z] = header.position;
+        console.log(build)
         return {
             map:methods.get(build.type)(x,y,z,build),
             foo:this.getFoo(build),
             other:build.height
+        }
+    };
+
+    static LoadScript(){
+        //
+        let scripts = require('../script/main.js');
+        for (let i in scripts){
+            methods.set(scripts[i].name,scripts[i].bin);
         }
     }
 
@@ -562,36 +551,51 @@ class Algorithms {
     static getFoo(build){
         let setTile = ['sphere','ellipsoid','torus','cone','ellipticTorus'];
         let setLongTile = ['round','circle','ellipse'];
+        let setblock = ['forestgen','pumpkins'];
+        if(build.type == 'paint'){
+            return 'paint';
+        }
+        if(!!~setblock.indexOf(build.type)){
+            return 'setblock'
+        }
         if(build.entityMod){
             if(!!~setTile.indexOf(build.type)){
                 return 'setEntity';
             }else if(!!~setLongTile.indexOf(build.type)){
                 return 'setLongEntity';
-            };
+            }else{
+                return 'summon';
+            }
         }else{
             if(!!~setTile.indexOf(build.type)){
                 return 'setTile';
             }else if(!!~setLongTile.indexOf(build.type)){
                 return 'setLongTile';
-            };
+            }else{
+                return 'setblock'
+            }
         }
         return 'Unknown!';
     }
+
+    static returnMethods(){
+        return methods;
+    }
 }
 
-console.log(Algorithms.Builder({
-    position:[0,0,0]
-},{
-    type:'forestgen',
-    direction:'y',
-    radius:5,
-    length:5,
-    density:10,
-    width:5,
-    shape:'oak',
-    height:1,
-    accuracy:50,
-}));
-//module.exports = Algorithms;
+function multiDimensionalUnique(arr) {
+    let uniques = [];
+    let itemsFound = {};
+    for (let i = 0, l = arr.length; i < l; i++) {
+        let stringified = JSON.stringify(arr[i]);
+        if (itemsFound[stringified]) {
+            continue;
+        }
+        uniques.push(arr[i]);
+        itemsFound[stringified] = true;
+    }
+    return uniques;
+}
 
-
+//Algorithms.LoadScript();
+module.exports = Algorithms;
