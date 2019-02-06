@@ -529,7 +529,6 @@ class Algorithms {
     };
 
     static LoadScript(){
-        //
         let scripts = require('../script/main.js');
         for (let i in scripts){
             methods.set(scripts[i].name,scripts[i].bin);
@@ -577,7 +576,6 @@ class Algorithms {
         }
         return 'Unknown!';
     }
-
     static returnMethods(){
         return methods;
     }
