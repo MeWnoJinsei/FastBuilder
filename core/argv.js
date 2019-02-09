@@ -8,6 +8,7 @@ class Read{
 			toRoot:!!~args.indexOf('sudo') && !!~args.indexOf('su'),
 			exitRoot:!!~args.indexOf('sudo') && !!~args.indexOf('exit'),
 			isSudo:!!~args.indexOf('sudo') || opts.su,
+			delays:parseInt(hasFlags(args, '-t', '--times') || 10)
 		};
 		out.header = {
 			position:!!~args.indexOf('-p') ? [
@@ -63,7 +64,6 @@ class Read{
 			shape:hasFlags(args, '-s', '--shape') || 'hollow',
 			radius:parseInt(hasFlags(args, '-r', '--radius') || 0),
 			accuracy:parseInt(hasFlags(args, '-a', '--accuracy') || 50),
-			delays:parseInt(hasFlags(args, '-t', '--times') || 10),
 			width:parseInt(hasFlags(args, '-w', '--width') || 0),
 			length:parseInt(hasFlags(args, '-l', '--length') || 0),
 			height:parseInt(hasFlags(args, '-h', '--height') || 1),

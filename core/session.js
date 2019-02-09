@@ -3,6 +3,7 @@ const Algorithms = require('./algorithms');
 const helps = require('./profile').helps;
 const color = require('../script/paint/colortables');
 const get_pixels = require('get-pixels');
+
 let $default = {};
 let $history = {
   players:[],
@@ -87,7 +88,7 @@ class BuildSession {
     console.log(args);
     let {main, header, build, collect} = args;
     let {position, block, data, method, $block, $data, entity} = header;
-    let delays = build.delays;
+    let delays = main.delays;
 
     method = method == 'normal' ? 'replace':[method,$block,$data].join(' ');
 
@@ -132,7 +133,7 @@ class BuildSession {
       }
 
       else if(build.entityMod){
-        this.sendText(now() + 'Time need: ' + ((map.length * delays * build.height) / 1000) + 's.');
+        this.sendText(now() + 'Time need: ' + ((map.length * delays * build[0].height) / 1000) + 's.');
       }
       else{
         this.sendText(now() + 'Time need: ' + ((map.length * delays) / 1000) + 's.')
@@ -343,6 +344,7 @@ class BuildSession {
     let dy = direction == 'y' ? len : 0;
     let dz = direction == 'z' ? len : 0;
     let that = this;
+    let done = 0;
     let interval = setInterval(function() {
       that.session.sendCommand([
         'fill',
@@ -478,6 +480,4 @@ function get_color(r, g, b, a) {
     }
     return [color[List.indexOf(getMin(List))].name,color[List.indexOf(getMin(List))].data];
 }
-
-
 module.exports = BuildSession;

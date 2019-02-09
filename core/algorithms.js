@@ -153,7 +153,7 @@ methods.set('ellipsoid',(x, y, z, input) => {
     return session;
 });
 methods.set('torus',(x, y, z, input) => {
-    let {accuracy, radius, length} = input;
+    let {direction, accuracy, radius, length} = input;
     let session = [];
     accuracy = 1 / accuracy;
     let max = Math.PI * 2;
@@ -186,7 +186,7 @@ methods.set('torus',(x, y, z, input) => {
     return multiDimensionalUnique(session);
 });
 methods.set('cone',(x, y, z, input) => {
-    let {height, accuracy, radius} = input;
+    let {direction, height, accuracy, radius} = input;
     let session = [];
     let max = Math.PI * 2;
     accuracy = 1 / accuracy;
@@ -194,7 +194,10 @@ methods.set('cone',(x, y, z, input) => {
         case "z":
             for (let u = 0; u < height; u++) {
                 for (let i = 0; i < max; i = i + accuracy) {
-                    session.push([Math.floor(((height - u) / height) * radius * Math.cos(i)) + x, Math.floor(((height - u) / height) * radius * Math.sin(i)) + y, u + z]);
+                    session.push([
+                      Math.floor(((height - u) / height) * radius * Math.cos(i)) + x,
+                      Math.floor(((height - u) / height) * radius * Math.sin(i)) + y,
+                      u + z]);
                 }
             }
             break;
@@ -515,7 +518,7 @@ methods.set('forestgen',(pX, pY, pZ, input) => {
 });
 methods.set('paint',() => {
     return [0,0,0];
-})
+});
 class Algorithms {
     static builder (header, build) {
         let r = new Algorithms();

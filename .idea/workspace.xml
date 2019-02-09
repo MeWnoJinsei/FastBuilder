@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1311408-cb91-4c6c-8a74-b9dd296ec510" name="Default Changelist" comment="Merge branch 'master' of https://github.com/CAIMEOX/FastBuilder&#10;&#10;# Conflicts:&#10;#&#9;Algorithms.js&#10;#&#9;FastBuilder.md&#10;#&#9;fastbuilder.js">
-      <change beforePath="$PROJECT_DIR$/core/algorithms.js" beforeDir="false" afterPath="$PROJECT_DIR$/core/algorithms.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/Main.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,8 +22,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/session.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="800">
-              <caret line="167" column="18" lean-forward="true" selection-start-line="167" selection-start-column="18" selection-end-line="167" selection-end-column="18" />
+            <state relative-caret-position="1334">
+              <caret line="482" column="30" lean-forward="true" selection-start-line="482" selection-start-column="30" selection-end-line="482" selection-end-column="30" />
               <folding>
                 <element signature="n#!!block;n#init#0;n#BuildSession#0" />
                 <element signature="n#!!block;n#sendText#0;n#BuildSession#0" />
@@ -50,68 +51,46 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/argv.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="91" column="29" lean-forward="true" selection-start-line="91" selection-start-column="29" selection-end-line="91" selection-end-column="29" />
+            <state relative-caret-position="2275">
+              <caret line="91" column="29" selection-start-line="91" selection-start-column="29" selection-end-line="91" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/algorithms.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="535" column="5" lean-forward="true" selection-start-line="535" selection-start-column="5" selection-end-line="535" selection-end-column="5" />
               <folding>
-                <element signature="e#129#326#0" />
-                <element signature="e#352#908#0" />
-                <element signature="e#926#1144#0" />
-                <element signature="e#1161#1592#0" />
+                <element signature="e#67#1173#0" />
+                <element signature="e#1217#2467#0" />
+                <element signature="e#2511#3573#0" />
+                <element signature="e#3618#4809#0" />
+                <element signature="e#4856#5309#0" />
+                <element signature="e#5352#6750#0" />
+                <element signature="e#6792#8073#0" />
+                <element signature="e#8124#9547#0" />
+                <element signature="e#9599#9978#0" />
+                <element signature="e#10027#12548#0" />
+                <element signature="e#12598#20989#0" />
+                <element signature="e#12692#13678#0" />
+                <element signature="e#13706#14692#0" />
+                <element signature="e#14723#18079#0" />
+                <element signature="e#18110#19989#0" />
+                <element signature="n#!!block;n#WhileBuilder#0;n#Algorithms#0" />
+                <element signature="n#!!block;n#returnMethods#0;n#Algorithms#0" />
+                <element signature="n#!!block;n#multiDimensionalUnique#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core/algorithms.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="469">
-              <caret line="598" column="28" lean-forward="true" selection-start-line="598" selection-start-column="28" selection-end-line="598" selection-end-column="28" />
-              <folding>
-                <element signature="e#75#1461#0" />
-                <element signature="e#1513#3043#0" />
-                <element signature="e#3095#4397#0" />
-                <element signature="e#4450#5921#0" />
-                <element signature="e#5976#6533#0" />
-                <element signature="e#6584#8230#0" />
-                <element signature="e#8280#9809#0" />
-                <element signature="e#9868#11487#0" />
-                <element signature="e#11547#11998#0" />
-                <element signature="e#12055#15008#0" />
-                <element signature="e#12554#20945#0" />
-                <element signature="e#15184#16338#0" />
-                <element signature="e#17567#21403#0" />
-                <element signature="e#18066#19945#0" />
-                <element signature="e#20985#20993#0" />
-                <element signature="n#!!block;n#WhileBuilder#0;n#Algorithms#0" />
-                <element signature="n#!!block;n#returnMethods#0;n#Algorithms#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/wsserver.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="75" column="9" selection-start-line="75" selection-start-column="9" selection-end-line="75" selection-end-column="9" />
-              <folding>
-                <element signature="n#Session#0" />
-                <element signature="n#!!block;n#subscribe#0;n#Session#0" />
-                <element signature="n#!!block;n#unsubscribe#0;n#Session#0" />
-                <element signature="n#!!block;n#sendCommand#0;n#Session#0" />
-                <element signature="n#!!block;n#onClose#0" />
-                <element signature="n#!!block;n#buildHeader#0" />
-              </folding>
+            <state relative-caret-position="434">
+              <caret line="29" column="3" lean-forward="true" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -204,10 +183,10 @@
         <option value="$PROJECT_DIR$/core/wsserver.js" />
         <option value="$PROJECT_DIR$/script/main.js" />
         <option value="$PROJECT_DIR$/script/paint/paint.js" />
-        <option value="$PROJECT_DIR$/Main.js" />
         <option value="$PROJECT_DIR$/core/argv.js" />
         <option value="$PROJECT_DIR$/core/session.js" />
         <option value="$PROJECT_DIR$/core/algorithms.js" />
+        <option value="$PROJECT_DIR$/Main.js" />
       </list>
     </option>
   </component>
@@ -223,7 +202,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -246,6 +224,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -355,12 +334,13 @@
       <workItem from="1549346490995" duration="750000" />
       <workItem from="1549347271893" duration="7662000" />
       <workItem from="1549371109493" duration="4516000" />
-      <workItem from="1549428993854" duration="7372000" />
+      <workItem from="1549428993854" duration="7598000" />
+      <workItem from="1549442113760" duration="1258000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="176868000" />
+    <option name="totallyTimeSpent" value="178352000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -373,10 +353,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="31" width="1920" height="1049" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48364154" visible="true" weight="0.13255568" />
-      <window_info id="Structure" order="1" sideWeight="0.51635844" side_tool="true" visible="true" weight="0.13255568" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48136646" visible="true" weight="0.13255568" />
+      <window_info id="Structure" order="1" sideWeight="0.51863354" side_tool="true" visible="true" weight="0.13255568" />
       <window_info id="Favorites" order="2" sideWeight="0.5145631" side_tool="true" weight="0.13255568" />
       <window_info id="npm" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -389,7 +368,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32798165" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.19380733" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.2614679" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -553,13 +532,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/script/paint/paint.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
@@ -587,23 +559,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/core/algorithms.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="535" column="5" lean-forward="true" selection-start-line="535" selection-start-column="5" selection-end-line="535" selection-end-column="5" />
+          <folding>
+            <element signature="e#67#1173#0" />
+            <element signature="e#1217#2467#0" />
+            <element signature="e#2511#3573#0" />
+            <element signature="e#3618#4809#0" />
+            <element signature="e#4856#5309#0" />
+            <element signature="e#5352#6750#0" />
+            <element signature="e#6792#8073#0" />
+            <element signature="e#8124#9547#0" />
+            <element signature="e#9599#9978#0" />
+            <element signature="e#10027#12548#0" />
+            <element signature="e#12598#20989#0" />
+            <element signature="e#12692#13678#0" />
+            <element signature="e#13706#14692#0" />
+            <element signature="e#14723#18079#0" />
+            <element signature="e#18110#19989#0" />
+            <element signature="n#!!block;n#WhileBuilder#0;n#Algorithms#0" />
+            <element signature="n#!!block;n#returnMethods#0;n#Algorithms#0" />
+            <element signature="n#!!block;n#multiDimensionalUnique#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/core/argv.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="91" column="29" lean-forward="true" selection-start-line="91" selection-start-column="29" selection-end-line="91" selection-end-column="29" />
-          <folding>
-            <element signature="e#129#326#0" />
-            <element signature="e#352#908#0" />
-            <element signature="e#926#1144#0" />
-            <element signature="e#1161#1592#0" />
-          </folding>
+        <state relative-caret-position="2275">
+          <caret line="91" column="29" selection-start-line="91" selection-start-column="29" selection-end-line="91" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/session.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="800">
-          <caret line="167" column="18" lean-forward="true" selection-start-line="167" selection-start-column="18" selection-end-line="167" selection-end-column="18" />
+        <state relative-caret-position="1334">
+          <caret line="482" column="30" lean-forward="true" selection-start-line="482" selection-start-column="30" selection-end-line="482" selection-end-column="30" />
           <folding>
             <element signature="n#!!block;n#init#0;n#BuildSession#0" />
             <element signature="n#!!block;n#sendText#0;n#BuildSession#0" />
@@ -627,29 +620,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/algorithms.js">
+    <entry file="file://$PROJECT_DIR$/Main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="598" column="28" lean-forward="true" selection-start-line="598" selection-start-column="28" selection-end-line="598" selection-end-column="28" />
-          <folding>
-            <element signature="e#75#1461#0" />
-            <element signature="e#1513#3043#0" />
-            <element signature="e#3095#4397#0" />
-            <element signature="e#4450#5921#0" />
-            <element signature="e#5976#6533#0" />
-            <element signature="e#6584#8230#0" />
-            <element signature="e#8280#9809#0" />
-            <element signature="e#9868#11487#0" />
-            <element signature="e#11547#11998#0" />
-            <element signature="e#12055#15008#0" />
-            <element signature="e#12554#20945#0" />
-            <element signature="e#15184#16338#0" />
-            <element signature="e#17567#21403#0" />
-            <element signature="e#18066#19945#0" />
-            <element signature="e#20985#20993#0" />
-            <element signature="n#!!block;n#WhileBuilder#0;n#Algorithms#0" />
-            <element signature="n#!!block;n#returnMethods#0;n#Algorithms#0" />
-          </folding>
+        <state relative-caret-position="434">
+          <caret line="29" column="3" lean-forward="true" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
         </state>
       </provider>
     </entry>
