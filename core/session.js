@@ -22,15 +22,14 @@ class BuildSession {
   init(){
     this.sendText('FastBuilder connected!');
     this.session.subscribe('PlayerMessage', onPlayerMessage.bind(this));
-    console.log(this.isTile('~','~','~','air'));
     $default = {
       position:[0,0,0],
       block:'iron_block',
       data:0,
       method:'normal',
       su:false,
-      $block:'air',
-      $data:0,
+      block2:'',
+      data2:'',
       entity:'ender_crystal'
     }
   }
@@ -87,10 +86,10 @@ class BuildSession {
   doit(args, player, msg){
     console.log(args);
     let {main, header, build, collect} = args;
-    let {position, block, data, method, $block, $data, entity} = header;
+    let {position, block, data, method, block2, data2, entity} = header;
     let delays = main.delays;
 
-    method = method == 'normal' ? 'replace':[method,$block,$data].join(' ');
+    method = method == 'normal' ? 'replace':[method,block2,data2].join(' ');
 
     if(main.toRoot){
       $default.su = true;

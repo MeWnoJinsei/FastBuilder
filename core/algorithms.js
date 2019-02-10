@@ -253,16 +253,6 @@ methods.set('ellipticTorus',(x, y, z, input) => {
     }
     return multiDimensionalUnique(session);
 });
-methods.set('ligature',(PosArray1, PosArray2) => {
-    let session = new Array();
-    let[i, j, k] = PosArray1;
-    let[x2, y2, z2] = PosArray2;
-    let line = Math.max(Math.abs(i - x2), Math.abs(j - y2), Math.abs(k - z2)) * 1;
-    for (let i = 0; i <= line; i++) {
-        session.push([Math.round(i + i / line * (x2 - i)), Math.round(j + i / line * (y2 - j)), Math.round(k + i / line * (z2 - k))]);
-    }
-    return session;
-});
 methods.set('pumpkins',(pX, pY, pZ, input) => {
     let {radius} = input;
     let session = [];
@@ -321,6 +311,7 @@ methods.set('pumpkins',(pX, pY, pZ, input) => {
     return session;
 });
 methods.set('forestgen',(pX, pY, pZ, input) => {
+  console.log('create forestgen')
     let {radius, shape, density} = input;
     let session = [];
     function Birch(x, y, z) {
@@ -490,7 +481,7 @@ methods.set('forestgen',(pX, pY, pZ, input) => {
     for(let x = -radius; x <= radius; x++) {
         for(let y = -radius; y <= radius; y++) {
             for(let z = -radius; z <= radius; z++) {
-                if(Math.floor(Math.random() * 400) + 0 <= density) {
+                if(Math.floor(Math.random() * 400) <= density) {
                     switch(shape) {
                         case "oak":
                             Oak(pX + x, pY + y - 1, pZ + z);
@@ -530,6 +521,10 @@ class Algorithms {
             other:build.height
         }
     };
+
+    static ProbabilityDistribution (args) {
+
+    }
 
     static LoadScript(){
         let scripts = require('../script/main.js');
@@ -579,6 +574,7 @@ class Algorithms {
         }
         return 'Unknown!';
     }
+
     static returnMethods(){
         return methods;
     }

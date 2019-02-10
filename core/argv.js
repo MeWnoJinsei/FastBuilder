@@ -19,8 +19,8 @@ class Read{
 			block:hasFlags(args, '-b', '--block') || opts.block,
 			data:hasFlags(args, '-d', '--data') || opts.data,
 			method:hasFlags(args, '-m', '--method') || opts.method,
-			$block:hasFlags(args, '-b2', '--block2') || opts.$block,
-			$data:hasFlags(args, '-d2', '--data2') || opts.$data,
+			block2:hasFlags(args, '-b2', '--block2') || opts.block2,
+			data2:hasFlags(args, '-d2', '--data2') || opts.data2,
 			entity:hasFlags(args, '-e', '--entity') || opts.entity
 		};
 		out.collect = {
@@ -49,6 +49,20 @@ class Read{
 		return out;
 	}
 
+	static returnJTable(args){
+		let JTable = new Map();
+		if(hasFlags(args,'-j','--JTable')){
+			let $table = args.slice(args.indexOf('{') + 1,args.indexOf('}') - 1);
+			$table.forEach(($v) => {
+				let $To = $v.split(',');
+				let [block, data] = $To[0].split(':');
+				let probability = $To[1];
+			});
+			JTable.add(probability, [block, data]);
+		}
+		return JTable;
+	}
+
 	static returnPosition(args,opts){
 		return [
 			parseInt(hasFlags(args, '$x', '--x')) || opts.position[0],
@@ -68,6 +82,7 @@ class Read{
 			length:parseInt(hasFlags(args, '-l', '--length') || 0),
 			height:parseInt(hasFlags(args, '-h', '--height') || 1),
 			entityMod:hasFlags(args, '-y', '--entityMod') || false,
+			density:hasFlags(args, '-c', '--density') || 0,
 			path:hasFlags(args, '-z', '--path') || false
 		};
 	}

@@ -1,7 +1,7 @@
 const EventEmitter = require('events');
 const WebSocket = require('ws');
 const crypto = require('crypto');
-
+let $on = true;
 class WSServer extends WebSocket.Server {
     constructor (port, processor) {
         super({ port: port });
@@ -77,6 +77,11 @@ function onConn(socket, req) {
 }
 
 function onMessage(message) {
+  if(!$on)return;
+   $on = false;
+    let $t = setTimeout(function () {
+      $on = true;
+    }, 10);
     let json = JSON.parse(message);
     let header = json.header;
     switch (header.messagePurpose) {
