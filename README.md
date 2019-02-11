@@ -11,18 +11,34 @@ FastBuilder是一个NodeJS程序，它让Minecraft复杂的结构设计变得简
 FastBuilder是开源的！我们希望更多人参与到FastBuilder的开发和维护．
 
 ## 快速开始
+### Android(安卓)　快速安装
+下载并安装Termux，然后打开Termux，输入下面内容(不按照顺序后果自负):
+```
+apt update && apt upgrade
+apt install git nodejs　-y
+git clone https://github.com/CAIMEOX/FastBuilder.git
+cd FastBuilder
+npm i
+npm start
+```
+安装成功之后，以后启动FastBuilder只需要使用下面命令即可
+```
+cd FastBuilder
+npm start
+```
+更新FastBuilder:
+```
+cd FastBuilder
+git pull
+npm i
+```
 
+### Linux 快速安装
 ```
 $ git clone https://github.com/CAIMEOX/FastBuilder.git
 $ cd FastBuilder
 $ npm install
 $ node Main.js
-```
-
-### 依赖项
-
-```
-$ npm install ws get-pixels
 ```
 
 ### 开始使用
@@ -32,9 +48,9 @@ FastBuilder的使用并不复杂，请耐心看完操作流程（不然存档暴
 
 在此之前，先完成‘快速开始’里面的内容.控制台没出错就代表启动成功了：  
 接下来，打开MinecraftPE,你几乎不必担心版本问题，FastBuilder支持1.0以上任意版本～  
-开启作弊，并打开聊天窗口，输入：  
+开启作弊，并打开聊天窗口，输入(地址就是你允许FastBuilder时输出的)：  
 ```
-/connect 控制台显示的ip:8080
+/connect 控制台的地址
 ```
 
 连接成功就可以开始使用FastBuilder命令了（不能加/)  
@@ -69,9 +85,11 @@ ellipsoid -l <width:x> -w <width:y> -h <width:z>
 //ellipse 方向 x长度 z宽度 高度
 ellipse -f <direction:String> -w <width:x> -l <width:z>
 //torus 方向　半径　环半径　精度
-torus -f <direction:String> -w <radius:Int> -r <torus-radius:Int> -a <accuracy:Int> 
+torus -f <direction:String> -w <radius:Int> -r <torus-radius:Int> -a <accuracy:Int>
 //cone 方向　半径　高度
-cone <direction:String> -r <radius:Int> -h <height:Int> -a <accuracy:Int>
+cone -f <direction:String> -r <radius:Int> -h <height:Int> -a <accuracy:Int>
+//forestgen 形状　半径　密度
+forestgen -s <shape:oak/birch/spruce/jungle> -r <radius:Int> -c <density:Int>
 ```
 
 ## 参数列表
@@ -91,7 +109,8 @@ FastBuilder命令允许玩家在结尾追加参数，此参数的使用范围为
 -h 高度(circle,round,ellipse必要参数)
 -s 形状(ellipsoid必要参数)
 -y 是否生成实体(布尔值)
--e 实体类型
+-e 实体类
+-c 密度
 ```
 
 ## 为什么不使用ModPE,而是WebsocketServer
@@ -99,7 +118,7 @@ FastBuilder命令允许玩家在结尾追加参数，此参数的使用范围为
 ### ModPE
 * 需要第三方启动器
 * 通常免费但是有广告
-* 不同版本需要不同的启动器 
+* 不同版本需要不同的启动器
 * 受到设备限制
 * 无法在服务器或领域使用
 
