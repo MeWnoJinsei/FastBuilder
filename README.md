@@ -48,7 +48,7 @@ FastBuilder的使用并不复杂，请耐心看完操作流程（不然存档暴
 
 在此之前，先完成‘快速开始’里面的内容.控制台没出错就代表启动成功了：  
 接下来，打开MinecraftPE,你几乎不必担心版本问题，FastBuilder支持1.0以上任意版本～  
-开启作弊，并打开聊天窗口，输入(地址就是你允许FastBuilder时输出的)：  
+开启作弊，并打开聊天窗口，输入(地址就是你运行FastBuilder时输出的)：  
 ```
 /connect 控制台的地址
 ```
@@ -107,7 +107,7 @@ FastBuilder命令允许玩家在结尾追加参数，此参数的使用范围为
 -a 精度
 -r 半径(circle,round,sphere必要参数)
 -h 高度(circle,round,ellipse必要参数)
--s 形状(ellipsoid必要参数)
+-s 形状(sphere,forestgen必要参数)
 -y 是否生成实体(布尔值)
 -e 实体类
 -c 密度
