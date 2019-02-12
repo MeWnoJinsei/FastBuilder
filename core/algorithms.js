@@ -548,7 +548,7 @@ methods.set('paint', () =>{
 class Algorithms {
     static builder(header,build) {
       for(let i in build){
-        if(!build[i].build){
+        if(!build[i].type){
           return {
             map:[]
           }

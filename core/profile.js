@@ -17,6 +17,8 @@ module.exports  = {
     'ellipsoid':'ellipsoid -l <length:Int> -w <width:Int> -h <height:Int>  --Create ellipsoid.',
     'torus':'torus -f <facing:<x:y:z>> -w <width:Int> -r <radius:Int> -a <accuracy:Int>  --Create torus.',
     'cone':'cone -f <facing<x:y:z>> -r <radius:Int> -h <height:Int> -a <accuracy:Int>  --Create cone.',
+    'forestgen':'forestgen -r <radius:Int> -c <density:Int> -s <shape:oak/birch/spruce/jungle>  --Create forest.',
+    'pumpkins':'pumpkin -r <radius:int>  --Generate pumpkin patches that even contain leaves',
     'paint':'paint -z <path:String>'
   }
 }
