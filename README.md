@@ -16,7 +16,7 @@ FastBuilder是开源的！我们希望更多人参与到FastBuilder的开发和�
 ```
 apt update && apt upgrade
 apt install git nodejs　-y
-git clone https://github.com/CAIMEOX/FastBuilder.git
+git clone https://git.coding.net/CAIMEO/FastBuilder.git
 cd FastBuilder
 npm i
 npm start
@@ -35,7 +35,7 @@ npm i
 
 ### Linux 快速安装
 ```
-$ git clone https://github.com/CAIMEOX/FastBuilder.git
+$ git clone https://git.coding.net/CAIMEO/FastBuilder.git
 $ cd FastBuilder
 $ npm install
 $ node Main.js
