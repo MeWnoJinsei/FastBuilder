@@ -72,11 +72,7 @@ class BuildSession {
       }
       return true;
     }else if(args.showhelp){
-	    if(args.error){
-		     this.sendText(helps[args.showhelp],'§4');
-      }else{
         this.sendText(helps[args.showhelp]);
-      }
       return true;
     }else{
       return false;
@@ -99,26 +95,27 @@ class BuildSession {
     }
 
     if(collect.writeData){
-      $header(true, header);
+      $default = header;
       this.sendText(now() + 'Data wrote!');
     }
 
     if(main.isCmd){
 
       this.sendText(($default.su ? 'root' : player) + '@FastBuilder: ' + msg);
-      this.showhelp(args.server);
+      if(this.showhelp(args.server)){
+        return;
+      }
 
-      //let {map, foo} = Algorithms.builder(header,build) || {};
       let {
         map,foo
-      } = Algorithms.builder(header,build[0]);
+      } = Algorithms.builder(header,build);
 
       if(!map){
         return;
       }
 
       else if(map.length === 0){
-        this.sendText(now() + 'Input error.You can type \'' + build.type + ' help\' to get help');
+        this.sendText(now() + 'Input error.You can type \'' + build[0].type + ' help\' to get help');
         return;
       }
 
@@ -427,17 +424,6 @@ class BuildSession {
       }
     }, delays);
   }
-}
-function $header(r,opts){
-  if(r){
-    $default.position = opts.position;
-    $default.block = opts.block;
-    $default.data = opts.data;
-    $default.method = opts.method;
-    $default.su = opts.su;
-  }
-  console.log($default);
-  return $default;
 }
 
 function onPlayerMessage(body){

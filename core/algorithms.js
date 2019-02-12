@@ -546,20 +546,44 @@ methods.set('paint', () =>{
     return [0, 0, 0];
 });
 class Algorithms {
-    static builder(header, build) {
-        let r = new Algorithms();
-        let[x, y, z] = header.position;
-        console.log(build);
-        return {
-            map: methods.get(build.type)(x, y, z, build),
-            foo: this.getFoo(build),
-            other: build.height
+    static builder(header,build) {
+      for(let i in build){
+        if(!build[i].build){
+          return {
+            map:[]
+          }
         }
-    };
+      }
+        //@build {Array}: [{},{},{}];
+        let [x, y, z] = header.position;
+        console.log(build);
+        if(build.length == 1){
+            return {
+                map: methods.get(build[0].type)(x, y, z, build[0]),
+                foo: this.getFoo(build[0]),
+                other: build[0].height
+            }
+        }else{
+            let $session = methods.get(build[0].type)(x,y,z,build[0]);
+            for(let i = 1 ; i <= build.length - 1; i++){
+                $session = this.forEachSeesion($session, build[i]);
+            }
+            return {
+                map: multiDimensionalUnique($session),
+                foo: this.getFoo(build[build.length - 1]),
+                other: build[0].height
+            }
+        }
+    }
 
-    static ProbabilityDistribution(args) {
-
-}
+    static forEachSeesion(_session, build){
+        let SESSION = [];
+        for(let i in _session){
+            let [x,y,z] = _session[i];
+            SESSION.push(methods.get(build.type)(x,y,z,build));
+        };
+        return multiDimensionalUnique(reduceDimension(SESSION));
+    }
 
     static hsvToRgb(h, s, v) {
         let r, g, b;
@@ -724,6 +748,10 @@ function multiDimensionalUnique(arr) {
         itemsFound[stringified] = true;
     }
     return uniques;
+}
+
+function reduceDimension(arr) {
+    return Array.prototype.concat.apply([], arr);
 }
 
 //Algorithms.LoadScript();
